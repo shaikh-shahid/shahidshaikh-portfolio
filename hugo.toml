@@ -5,7 +5,7 @@ theme = "archie"
 
 [params]
   author = "Shahid Shaikh"
-  description = "Software Architect | Distributed Systems | AI"
+  description = "Software Architect | Artificial Intelligence | Distributed Systems"
   subtitle = "Software engineering and personal blog. Writing about distributed systems, AI, and backend engineering."
   mode = "toggle"
   useCDN = true
