@@ -3,6 +3,7 @@ date = '2024-06-12T11:55:34+05:30'
 draft = false
 title = 'Pushing Data to Amazon Kinesis Firehose Using Golang Sdk'
 tags = ['aws','firehose']
+aliases = ["/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/293/"]
 +++
 The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.
 

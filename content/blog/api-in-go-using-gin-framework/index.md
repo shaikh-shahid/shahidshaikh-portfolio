@@ -3,6 +3,7 @@ date = '2022-02-22T11:56:57+05:30'
 draft = false
 title = 'Api in Go Using Gin Framework'
 tags = ['golang']
+aliases = ["/blog/api-in-go-using-gin-framework/29/"]
 +++
 Gin is a popular HTTP web framework for the Go programming language. It is designed to be a simple and lightweight framework, with a focus on high performance and ease of use. In this article, we'll take a look at some of the key features of the Gin framework and how you can use it to build a RESTful API.
 

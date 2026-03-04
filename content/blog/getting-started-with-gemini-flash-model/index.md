@@ -3,6 +3,7 @@ date = '2024-05-21T11:55:53+05:30'
 draft = false
 title = 'Getting Started With Gemini Flash Model'
 tags = ['artificial-intelligence']
+aliases = ["/blog/getting-started-with-gemini-flash-model/264/"]
 +++
 Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the [link](https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb).
 

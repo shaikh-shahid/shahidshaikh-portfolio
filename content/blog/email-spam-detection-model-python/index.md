@@ -1,8 +1,9 @@
 +++
 date = '2023-08-18T11:56:38+05:30'
 draft = false
-title = 'Email Spam Detection Model Python'
+title = 'Email Spam Detection Model in Python'
 tags = ['artificial-intelligence','machine-learning']
+aliases = ["/blog/email-spam-detection-model-python/118/"]
 +++
 I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.
 

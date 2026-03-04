@@ -3,6 +3,7 @@ date = '2025-08-08T11:55:00+05:30'
 draft = false
 title = 'What the Heck Is Agentic Ai Anyway'
 tags = ['artificial-intelligence','agents']
+aliases = ["/blog/what-the-heck-is-agentic-ai-anyway/400/"]
 +++
 ## The Simple Answer
 

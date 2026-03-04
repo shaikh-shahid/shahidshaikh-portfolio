@@ -3,6 +3,7 @@ date = '2023-01-06T11:57:17+05:30'
 draft = false
 title = 'Mysql Query Caching With Redis'
 tags = ['mysql', 'redis', 'performance']
+aliases = ["/blog/mysql-query-caching-with-redis/16/"]
 +++
 By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
 

@@ -3,6 +3,7 @@ date = '2025-06-10T11:56:14+05:30'
 draft = false
 title = '10 Chatgpt Prompts to Boost Developer Productivity'
 tags = ['artificial-intelligence']
+aliases = ["/blog/10-chatgpt-prompts-to-boost-developer-productivity/79/"]
 +++
 As developers and engineers, we constantly seek ways to streamline our workflows, increase productivity, and solve complex problems efficiently. With the advent of advanced language models like ChatGPT, we now have powerful tools to assist us in our daily tasks.
 

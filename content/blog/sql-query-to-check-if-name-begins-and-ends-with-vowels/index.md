@@ -3,6 +3,7 @@ date = '2023-01-09T11:57:36+05:30'
 draft = false
 title = 'Sql Query to Check if Name Begins and Ends With Vowels'
 tags = ['sql','tips']
+aliases = ["/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/24/"]
 +++
 Here is a SQL query to check if the name begins and ends with vowels. Assuming you are running this in a MySQL database engine.
 ```sql
