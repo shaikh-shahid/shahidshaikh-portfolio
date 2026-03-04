@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	{{ partial "header.html" . }}
+	<body>
+		<div class="content">
+			{{ partial "head.html" . }}
+
+			<main class="home">
+				<section class="home-intro">
+					<div class="home-intro-text">
+						<h1>Hey, I’m Shahid</h1>
+						<div class="home-intro-body">
+							{{ .Content }}
+						</div>
+						{{- with .Site.Params.Social }}
+						<div class="home-socials">
+							{{- range . }}
+							<a class="soc home-social-link" href="{{ .url }}" rel="me" title="{{ .name }}">
+								{{- if hasPrefix .icon "simple:" -}}
+									<i class="si si-{{ substr .icon 7 }}"></i>
+								{{- else -}}
+									{{- template "feathericon" (dict "Icon" .icon "UseCDN" $.Site.Params.useCDN) -}}
+								{{- end -}}
+								<span class="home-social-label">{{ .name }}</span>
+							</a>
+							{{- end -}}
+						</div>
+						{{- end }}
+					</div>
+					<div class="home-intro-photo">
+						<figure class="home-photo">
+							<img src="{{ "images/shahid-speaking.jpeg" | relURL }}" alt="Shahid speaking at a conference">
+						</figure>
+					</div>
+				</section>
+
+				{{ with .Site.Params.highlights }}
+				<section class="home-current">
+					<h2 class="home-section-title">Currently working on</h2>
+					<div class="home-current-grid">
+						{{ range . }}
+						<article class="home-current-card">
+							<div class="home-current-tag">{{ .tag }}</div>
+							<h3 class="home-current-title">
+								<a href="{{ .url }}">{{ .title }}</a>
+							</h3>
+							<p class="home-current-description">{{ .description }}</p>
+						</article>
+						{{ end }}
+					</div>
+				</section>
+				{{ end }}
+
+				<section class="home-posts">
+					<div class="home-section-header">
+						<h2 class="home-section-title">Recent blog posts</h2>
+						<a class="home-all-posts-inline" href="{{ "/blog/" | relURL }}">Full archive ⟶</a>
+					</div>
+					{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+					{{ $visible := first 10 (where $pages "Params.hidden" "ne" true) }}
+					<ul class="posts">
+					{{ range $visible }}
+						<li class="post">
+							<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+							<span class="meta">{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+						</li>
+					{{ end }}
+					</ul>
+				</section>
+			</main>
+
+			{{ partial "footer.html" . }}
+		</div>
+
+	</body>
+</html>

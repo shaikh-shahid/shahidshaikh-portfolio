@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/golang/</link>
+    <description>Recent content in Golang on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Feb 2022 11:56:57 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Api in Go Using Gin Framework</title>
+      <link>http://localhost:1313/blog/api-in-go-using-gin-framework/</link>
+      <pubDate>Tue, 22 Feb 2022 11:56:57 +0530</pubDate>
+      <guid>http://localhost:1313/blog/api-in-go-using-gin-framework/</guid>
+      <description>&lt;p&gt;Gin is a popular HTTP web framework for the Go programming language. It is designed to be a simple and lightweight framework, with a focus on high performance and ease of use. In this article, we&amp;rsquo;ll take a look at some of the key features of the Gin framework and how you can use it to build a RESTful API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;router&#34;&gt;Router&lt;/h2&gt;&#xA;&lt;p&gt;One of the key features of Gin is its router, which is used to define the routes and handler functions for your API. You can define routes using the &lt;code&gt;GET&lt;/code&gt;, &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and other HTTP verbs, and specify a handler function that will be called when a request is made to that route. Here&amp;rsquo;s an example of how you might define a simple route in Gin:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,83 @@
+baseURL = "https://shaikhshahid.com/"
+languageCode = "en-us"
+title = "Shahid Shaikh"
+theme = "archie"
+
+[params]
+  author = "Shahid Shaikh"
+  description = "Software Architect | Distributed Systems | AI"
+  subtitle = "Software engineering and personal blog. Writing about distributed systems, AI, and backend engineering."
+  mode = "toggle"
+  useCDN = true
+  mainSections = ["blog"]
+  og_image = "images/shahid-speaking.jpeg"
+  customCSS = ["css/custom-home.css"]
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+
+  [[params.highlights]]
+    title = "Redistill"
+    tag = "Building"
+    description = "Extremely fast Redis-compatible key-value database focused on low-latency, production workloads."
+    url = "https://github.com/redistill-io/redistill"
+
+  [[params.highlights]]
+    title = "Applied AI & Agents"
+    tag = "Research"
+    description = "Exploring agents, LLM-powered tooling, and applied AI systems for real-world products."
+    url = "/papershelf/"
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
+
+[[menu.main]]
+  name = "Books"
+  url = "/books/"
+  weight = 3
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 4
+
+[[menu.main]]
+  name = "Papershelf"
+  url = "/papershelf/"
+  weight = 5
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 6
+
+[[params.social]]
+  name = "X"
+  icon = "simple:twitter"
+  url = "https://x.com/shahidontech"
+
+[[params.social]]
+  name = "LinkedIn"
+  icon = "simple:linkedin"
+  url = "https://www.linkedin.com/in/skshahid/"
+
+[[params.social]]
+  name = "YouTube"
+  icon = "simple:youtube"
+  url = "https://www.youtube.com/@shahidontech"
+
+[[params.social]]
+  name = "GitHub"
+  icon = "simple:github"
+  url = "https://github.com/shaikh-shahid"

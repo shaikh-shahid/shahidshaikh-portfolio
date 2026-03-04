@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artificial-Intelligence on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/artificial-intelligence/</link>
+    <description>Recent content in Artificial-Intelligence on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Aug 2025 11:55:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What the Heck Is Agentic Ai Anyway</title>
+      <link>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</link>
+      <pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</guid>
+      <description>&lt;h2 id=&#34;the-simple-answer&#34;&gt;The Simple Answer&lt;/h2&gt;&#xA;&lt;p&gt;&amp;hellip;There is no simple answer.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the 10,000x scoped-out bird&amp;rsquo;s-eye view for you.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Regular AI talks to you. Agentic AI does things for you.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Remember when ChatGPT first blew everyone&amp;rsquo;s minds in 2022? It could have conversations, answer questions, and write pretty much anything you asked for. That was amazing, but it had one big limitation — it could only talk. It couldn&amp;rsquo;t actually &lt;em&gt;do&lt;/em&gt; anything in the real world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10 Chatgpt Prompts to Boost Developer Productivity</title>
+      <link>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</link>
+      <pubDate>Tue, 10 Jun 2025 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</guid>
+      <description>&lt;p&gt;As developers and engineers, we constantly seek ways to streamline our workflows, increase productivity, and solve complex problems efficiently. With the advent of advanced language models like ChatGPT, we now have powerful tools to assist us in our daily tasks.&lt;/p&gt;&#xA;&lt;p&gt;By leveraging the capabilities of ChatGPT, we can generate prompts that enhance our productivity and creativity, making us more effective problem solvers and innovators.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we&amp;rsquo;ll explore 10 ChatGPT prompts tailored specifically for developers and engineers to boost their productivity and streamline their workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Gemini Flash Model</title>
+      <link>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</link>
+      <pubDate>Tue, 21 May 2024 11:55:53 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</guid>
+      <description>&lt;p&gt;Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the &lt;a href=&#34;https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Email Spam Detection Model Python</title>
+      <link>http://localhost:1313/blog/email-spam-detection-model-python/</link>
+      <pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
+      <guid>http://localhost:1313/blog/email-spam-detection-model-python/</guid>
+      <description>&lt;p&gt;I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Chatgpt</title>
+      <link>http://localhost:1313/blog/getting-started-with-chatgpt/</link>
+      <pubDate>Sat, 31 Dec 2022 11:58:04 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-chatgpt/</guid>
+      <description>&lt;p&gt;OpenAI developed ChatGPT specifically for chatbot applications. Its underlying architecture, the GPT (Generative Pre-training Transformer), has a proven track record of excellence in a range of natural language processing applications.&lt;/p&gt;&#xA;&lt;p&gt;One of ChatGPT&amp;rsquo;s main features is its ability to generate text input responses that resemble human responses. Because it has been trained on a huge dataset of interactions, it can understand the context and flow of a discussion and offer appropriate responses.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/sql/</link>
+    <description>Recent content in Sql on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jan 2023 11:57:36 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sql Query to Check if Name Begins and Ends With Vowels</title>
+      <link>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</link>
+      <pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
+      <guid>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</guid>
+      <description>&lt;p&gt;Here is a SQL query to check if the name begins and ends with vowels. Assuming you are running this in a MySQL database engine.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; NAME&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; USERS&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; NAME RLIKE &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;^[AEIOU].*[aeiou]$&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we are using RLIKE operator to run a regular expression against a column. The regular expression contains the check against the first and last characters with the vowels alphabet in both capital and small letters.&lt;/p&gt;&#xA;&lt;p&gt;It would be best if you had the USERS table in your database and data containing some names to run the query.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

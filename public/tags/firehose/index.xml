@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firehose on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/firehose/</link>
+    <description>Recent content in Firehose on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2024 11:55:34 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/firehose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pushing Data to Amazon Kinesis Firehose Using Golang Sdk</title>
+      <link>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</link>
+      <pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
+      <guid>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</guid>
+      <description>&lt;p&gt;The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.&lt;/p&gt;&#xA;&lt;p&gt;Get an AWS account if you don&amp;rsquo;t have it already. Log in to the AWS console and search for &amp;ldquo;firehose&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

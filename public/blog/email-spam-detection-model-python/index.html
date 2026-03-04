@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Email Spam Detection Model Python - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.
+Prerequisites
+This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:" />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/email-spam-detection-model-python/">
+  <meta property="og:site_name" content="Shahid Shaikh">
+  <meta property="og:title" content="Email Spam Detection Model Python">
+  <meta property="og:description" content="I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.
+Prerequisites This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-08-18T11:56:38+05:30">
+    <meta property="article:modified_time" content="2023-08-18T11:56:38+05:30">
+    <meta property="article:tag" content="Artificial-Intelligence">
+    <meta property="article:tag" content="Machine-Learning">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Email Spam Detection Model Python">
+  <meta name="twitter:description" content="I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.
+Prerequisites This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Email Spam Detection Model Python</h1>
+          <div class="meta">Posted on Aug 18, 2023</div>
+        </div>
+        
+        <section class="body">
+          <p>I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:</p>
+<ul>
+<li>Python</li>
+<li>Jupyter Notebook</li>
+<li>Visual Studio Code or Editor of your choice</li>
+</ul>
+<p>Here are quick links to the installation page of <a href="https://www.python.org/downloads/">Python</a> and <a href="https://jupyter.org/install">Jupyter Notebook</a>.</p>
+<p>You should also install the <strong>Anaconda</strong> package that contains the majority of the libraries we need for Machine learning in Python. Click <a href="https://www.anaconda.com/download"><strong>here</strong></a> to go to the downloads page.</p>
+<p>I also assume that you know the basics of Machine learning and Python because I won&rsquo;t be digging too deep into basic concepts.</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Build and train a Machine learning model with good accuracy to detect emails as spam or ham (no spam). We should use standard libraries available for Machine learning model building.</p>
+<h2 id="dataset">Dataset</h2>
+<p>To train any model, you need a pre-defined dataset that contains good and clean data. By clean I mean it should not have null values, ambiguous data or empty data. For this tutorial, I have identified a clean dataset and you can download it directly by clicking the link below.</p>
+<p><a href="https://shaikhshahid.com/wp-content/uploads/2023/09/spam.csv">Spam Dataset</a></p>
+<h2 id="code">Code</h2>
+<p>Let&rsquo;s jump into the code. Open your Jupyter Notebook and import all the libraries we will need.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> sklearn.model_selection  <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> sklearn.feature_extraction.text <span style="color:#f92672">import</span> CountVectorizer
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> sklearn.naive_bayes <span style="color:#f92672">import</span> MultinomialNB
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">from</span> sklearn <span style="color:#f92672">import</span> metrics
+</span></span></code></pre></div><p>Now, import the CSV you just downloaded as a pandas data frame.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    emailData <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;spam.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>    emailData<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><p>You should have the file data in your notebook similar to this.</p>
+<p><img src="pandas-csv.webp" alt="Building Email Spam Detection Model in Python"></p>
+<p>Analyze the data and ensure there are no null values using the following code.</p>
+<pre tabindex="0"><code>    emailData.shape
+    emailData.isnull().sum()
+    emailData.describe()
+</code></pre><p>Our target variable in the dataset is the Category and we should convert it into a numerical variable for the model. Here we will map it this way</p>
+<pre tabindex="0"><code>Spam -&gt; 1
+
+Ham -&gt; 0
+</code></pre><p>Here is the code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    emailData[<span style="color:#e6db74">&#39;Spam&#39;</span>] <span style="color:#f92672">=</span> emailData<span style="color:#f92672">.</span>Category<span style="color:#f92672">.</span>map({<span style="color:#e6db74">&#34;spam&#34;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;ham&#34;</span>:<span style="color:#ae81ff">0</span>})
+</span></span><span style="display:flex;"><span>    emailData<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#34;Category&#34;</span>,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Now our data is clean and ready to be used in the model building.</p>
+<p>Now our target variable is Spam which will determine whether the e-mail is spam or ham. First, will define X and Y variables.</p>
+<pre tabindex="0"><code>    X = emailData.Message
+    y = emailData.Spam
+</code></pre><p>X is our input which is email messages in the data file and y is our target variable.</p>
+<p>Next, we will split our data in a 70-30 split. 70% of the data will be used for training our model and 30% of it will be used for testing purposes. It&rsquo;s not a set practice and some engineers choose 75-25 split which is also fine.</p>
+<pre tabindex="0"><code>    X_train,X_test,y_train,y_test = train_test_split(X,y,random_state=1,test_size=0.3)
+</code></pre><p>The <strong>random state</strong> ensures that every time we run the code it will produce the same test and train split.</p>
+<p>Now comes the important part, we need to convert the email and the words in those emails as tokens and we also need to avoid stop words to not create confusion. Let&rsquo;s create that using the <strong>CountVectorizer</strong> package.</p>
+<pre tabindex="0"><code>    vect = CountVectorizer(stop_words=&#39;english&#39;)
+    vect.fit(X_train)
+</code></pre><p>Let&rsquo;s transform them into a numerical format for the model to understand better.</p>
+<pre tabindex="0"><code>    X_train_transformed = vect.transform(X_train)
+    X_test_transformed = vect.transform(X_test)
+</code></pre><p>Let&rsquo;s build a model. We will be building a multinominal Naive Bayes Model which is widely used for text-based prediction.</p>
+<pre tabindex="0"><code>    mnb = MultinomialNB()
+    mnb.fit(X_train_transformed,y_train)
+</code></pre><p>Now, that our model is instantiated, let&rsquo;s test it with our test data.</p>
+<pre tabindex="0"><code>    y_pred = mnb.predict(X_test_transformed)
+</code></pre><p>Let&rsquo;s check the accuracy score.</p>
+<pre tabindex="0"><code>    metrics.accuracy_score(y_pred, y_test)
+</code></pre><p>For me, it&rsquo;s coming around <strong>0.9856459330143541 i.e</strong> 98% accuracy.</p>
+<h2 id="testing-the-model-with-real-data">Testing the Model with Real Data</h2>
+<p>Time to test our model with some real data. I copied the following e-mail from my Gmail Inbox to see how it detects spam and ham.</p>
+<pre tabindex="0"><code>    emails=[
+        &#39;Sounds great! Are you home now?&#39;,
+        &#39;Will u meet ur dream partner soon? Is ur career off 2 a flyng start? 2 find out free, txt HORO followed by ur star sign, e. g. HORO ARIES&#39;,
+        &#39;Hello My Name is Gabriel Robert a top Bank Officer with Standard Bank of South Africa and I am in need of a reliable foreigner to carry out this important deal. An account was opened in my bank by one of my customers a Dutch National from Germany who made a fixed deposit of $11,100,000.00 (Eleven Million, One hundred Thousand United States Dollars) and never show up again and I later discovered that he died with his entire family members on a plane crash that occurred in Libya on the 12th of May 2010 which I can give you a link to that crash if you care. Since nobody is coming for this fund or knows about this fund I want to present a foreigner like you as next of kin to my late client so we can make the claim and you can contact me if you are interested so I can give you more detailed information about this transaction. For the sharing of the money will be shared in the ratio of 50% for me, 40% for you and 10% to cover our expenses after the deal. Now the total amount to be transferred is $12.2 million because of the interest the fund has accumulated for some recent time. Please keep this absolutely confidential and tell me if you are interested but I can assure you 100% risk free as I know how to go about it. Waiting for your urgent reply and call. Thanks.&#39;
+    ]
+</code></pre><p>Here is the code to predict this with our model.</p>
+<pre tabindex="0"><code>    email_1 = vect.transform(emails)
+    mnb.predict(email_1)
+</code></pre><p>Should give us the following output.</p>
+<pre tabindex="0"><code>    array([0, 1, 1])
+</code></pre><p>Here 0 means ham and 1 means spam. So in my case, it is correct and detected the spam correctly. Do a test with your own e-mail data from your inbox and see how it&rsquo;s reacting to your data.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/artificial-intelligence/">artificial-intelligence</a></li>
+              
+              <li><a href="/tags/machine-learning/">machine-learning</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

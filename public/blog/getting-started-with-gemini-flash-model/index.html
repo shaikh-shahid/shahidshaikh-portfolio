@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Getting Started With Gemini Flash Model - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the link.
+In this tutorial, we are going to learn how to get started with Gemini Flash and use its models." />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/getting-started-with-gemini-flash-model/">
+  <meta property="og:site_name" content="Shahid Shaikh">
+  <meta property="og:title" content="Getting Started With Gemini Flash Model">
+  <meta property="og:description" content="Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the link.
+In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-05-21T11:55:53+05:30">
+    <meta property="article:modified_time" content="2024-05-21T11:55:53+05:30">
+    <meta property="article:tag" content="Artificial-Intelligence">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Getting Started With Gemini Flash Model">
+  <meta name="twitter:description" content="Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the link.
+In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Getting Started With Gemini Flash Model</h1>
+          <div class="meta">Posted on May 21, 2024</div>
+        </div>
+        
+        <section class="body">
+          <p>Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the <a href="https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb">link</a>.</p>
+<p>In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.</p>
+<p>Before you begin, you will need the Google AI API key. </p>
+<h2 id="get-google-ai-api-key">Get Google AI API Key</h2>
+<p>Head over to the AI studio website and create your API key. Save it somewhere secure in your machine. You don&rsquo;t need to pay anything for this.</p>
+<p><img src="gemini-keys.webp" alt="Gemini Flash API Key"></p>
+<p>Once you have an API key. Download the notebook from this <a href="https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb">link</a> and start the Juypter server. If you don&rsquo;t have it installed on your machine, you can try Google Collab or install it on your machine by following the instructions mentioned <a href="https://jupyter.org/install">here</a>.</p>
+<h2 id="getting-started-with-gemini-flash-in-python">Getting Started with Gemini Flash in Python</h2>
+<p>First thing first, install the Google generative ai module using this command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    !pip install -q -U google-generativeai
+</span></span></code></pre></div><p>Now, import the SDK and initialise the model.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#75715e"># Import the Python SDK</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> google.generativeai <span style="color:#66d9ef">as</span> genai
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PUT your gemini API key here&#39;</span>
+</span></span><span style="display:flex;"><span>    genai<span style="color:#f92672">.</span>configure(api_key<span style="color:#f92672">=</span>GOOGLE_API_KEY)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>GenerativeModel(<span style="color:#e6db74">&#39;gemini-pro&#39;</span>)
+</span></span></code></pre></div><p>Let&rsquo;s make our first AI model query.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>generate_content(<span style="color:#e6db74">&#34;Help me write a content about visual studio code and how it works&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(response<span style="color:#f92672">.</span>text)
+</span></span></code></pre></div><p>You should see a response in the markdown text. </p>
+<p>We can also find out what models are available for us to use.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> genai<span style="color:#f92672">.</span>list_models():
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;generateContent&#39;</span> <span style="color:#f92672">in</span> m<span style="color:#f92672">.</span>supported_generation_methods:
+</span></span><span style="display:flex;"><span>        print(m<span style="color:#f92672">.</span>name)
+</span></span></code></pre></div><p>Here is the output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">-</span>pro
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">-</span>pro<span style="color:#f92672">-</span><span style="color:#ae81ff">001</span>
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">-</span>pro<span style="color:#f92672">-</span>latest
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">-</span>pro<span style="color:#f92672">-</span>vision<span style="color:#f92672">-</span>latest
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span><span style="color:#f92672">-</span>flash<span style="color:#f92672">-</span>latest
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span><span style="color:#f92672">-</span>pro<span style="color:#f92672">-</span>latest
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span>pro
+</span></span><span style="display:flex;"><span>    models<span style="color:#f92672">/</span>gemini<span style="color:#f92672">-</span>pro<span style="color:#f92672">-</span>vision
+</span></span></code></pre></div><p>Let&rsquo;s use the Gemini Vision model to find out the details of an image.</p>
+<h2 id="using-vision-model">Using Vision Model</h2>
+<p>I am going to use this image. </p>
+<p><img src="petronas-tower.webp" alt="Patronas tower"></p>
+<p>Let&rsquo;s read this image first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#f92672">import</span> PIL.Image
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    img <span style="color:#f92672">=</span> PIL<span style="color:#f92672">.</span>Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;image_2.jpg&#39;</span>)
+</span></span><span style="display:flex;"><span>    img
+</span></span></code></pre></div><p>Now, I am going to initiate and call the model.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    model_image <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>GenerativeModel(<span style="color:#e6db74">&#39;gemini-pro-vision&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    response_image <span style="color:#f92672">=</span> model_image<span style="color:#f92672">.</span>generate_content(img)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    response_image<span style="color:#f92672">.</span>text
+</span></span></code></pre></div><p>Here is the output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;The Petronas Twin Towers are located in Kuala Lumpur, Malaysia. They are the tallest twin towers in the world, standing at 452 meters (1,483 feet) tall. The towers were completed in 1998 and are an iconic part of the Kuala Lumpur skyline.&#39;</span>
+</span></span></code></pre></div><p>Gemini also detects prompts from the photos and questions as well, so if the photo has text in it, it will take it as input and generate a response accordingly.</p>
+<p>You can get more code in my notebook.</p>
+<h2 id="summary">Summary</h2>
+<p>The Gemini Flash is a really good alternative to OpenAI and Llama models. The competition between these tech giants is helping the AI community and we are getting to use this awesome tech for almost free. I do see a bright future for the Gemini and its various models.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/artificial-intelligence/">artificial-intelligence</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

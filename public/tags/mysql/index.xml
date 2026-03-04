@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/mysql/</link>
+    <description>Recent content in Mysql on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Jan 2023 11:57:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql Query Caching With Redis</title>
+      <link>http://localhost:1313/blog/mysql-query-caching-with-redis/</link>
+      <pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
+      <guid>http://localhost:1313/blog/mysql-query-caching-with-redis/</guid>
+      <description>&lt;p&gt;By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.&lt;/p&gt;&#xA;&lt;p&gt;Caching can be done using a variety of different technologies, such as MySQL and Redis. We&amp;rsquo;ll look at both of these technologies in this post and see how they may be applied to caching.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

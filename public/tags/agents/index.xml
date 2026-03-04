@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agents on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/agents/</link>
+    <description>Recent content in Agents on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Aug 2025 11:55:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/agents/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What the Heck Is Agentic Ai Anyway</title>
+      <link>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</link>
+      <pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</guid>
+      <description>&lt;h2 id=&#34;the-simple-answer&#34;&gt;The Simple Answer&lt;/h2&gt;&#xA;&lt;p&gt;&amp;hellip;There is no simple answer.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the 10,000x scoped-out bird&amp;rsquo;s-eye view for you.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Regular AI talks to you. Agentic AI does things for you.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Remember when ChatGPT first blew everyone&amp;rsquo;s minds in 2022? It could have conversations, answer questions, and write pretty much anything you asked for. That was amazing, but it had one big limitation — it could only talk. It couldn&amp;rsquo;t actually &lt;em&gt;do&lt;/em&gt; anything in the real world.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

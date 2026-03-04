@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine-Learning on Shahid Shaikh</title>
+    <link>http://localhost:1313/tags/machine-learning/</link>
+    <description>Recent content in Machine-Learning on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Aug 2023 11:56:38 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Email Spam Detection Model Python</title>
+      <link>http://localhost:1313/blog/email-spam-detection-model-python/</link>
+      <pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
+      <guid>http://localhost:1313/blog/email-spam-detection-model-python/</guid>
+      <description>&lt;p&gt;I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shaikh Shahid on Shahid Shaikh</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Shaikh Shahid on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Aug 2025 11:55:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What the Heck Is Agentic Ai Anyway</title>
+      <link>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</link>
+      <pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</guid>
+      <description>&lt;h2 id=&#34;the-simple-answer&#34;&gt;The Simple Answer&lt;/h2&gt;&#xA;&lt;p&gt;&amp;hellip;There is no simple answer.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the 10,000x scoped-out bird&amp;rsquo;s-eye view for you.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Regular AI talks to you. Agentic AI does things for you.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Remember when ChatGPT first blew everyone&amp;rsquo;s minds in 2022? It could have conversations, answer questions, and write pretty much anything you asked for. That was amazing, but it had one big limitation — it could only talk. It couldn&amp;rsquo;t actually &lt;em&gt;do&lt;/em&gt; anything in the real world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10 Chatgpt Prompts to Boost Developer Productivity</title>
+      <link>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</link>
+      <pubDate>Tue, 10 Jun 2025 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</guid>
+      <description>&lt;p&gt;As developers and engineers, we constantly seek ways to streamline our workflows, increase productivity, and solve complex problems efficiently. With the advent of advanced language models like ChatGPT, we now have powerful tools to assist us in our daily tasks.&lt;/p&gt;&#xA;&lt;p&gt;By leveraging the capabilities of ChatGPT, we can generate prompts that enhance our productivity and creativity, making us more effective problem solvers and innovators.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we&amp;rsquo;ll explore 10 ChatGPT prompts tailored specifically for developers and engineers to boost their productivity and streamline their workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pushing Data to Amazon Kinesis Firehose Using Golang Sdk</title>
+      <link>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</link>
+      <pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
+      <guid>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</guid>
+      <description>&lt;p&gt;The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.&lt;/p&gt;&#xA;&lt;p&gt;Get an AWS account if you don&amp;rsquo;t have it already. Log in to the AWS console and search for &amp;ldquo;firehose&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Gemini Flash Model</title>
+      <link>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</link>
+      <pubDate>Tue, 21 May 2024 11:55:53 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</guid>
+      <description>&lt;p&gt;Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the &lt;a href=&#34;https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Email Spam Detection Model Python</title>
+      <link>http://localhost:1313/blog/email-spam-detection-model-python/</link>
+      <pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
+      <guid>http://localhost:1313/blog/email-spam-detection-model-python/</guid>
+      <description>&lt;p&gt;I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I’m &lt;strong&gt;Shaikh Shahid&lt;/strong&gt;, a software engineer and architect who enjoys building backend systems, working with data, and exploring how AI can be used in real products.&lt;/p&gt;&#xA;&lt;p&gt;Over the last few years I’ve worked with:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Distributed systems and data pipelines&lt;/li&gt;&#xA;&lt;li&gt;Databases and query performance&lt;/li&gt;&#xA;&lt;li&gt;Backend services in Go and other languages&lt;/li&gt;&#xA;&lt;li&gt;Practical applications of machine learning and generative AI&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This site is where I document what I’m learning — from system design notes and database internals, to AI experiments and hands-on tutorials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Books and Publications</title>
+      <link>http://localhost:1313/books/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/books/</guid>
+      <description>&lt;h2 id=&#34;books-and-publications&#34;&gt;Books and Publications&lt;/h2&gt;&#xA;&lt;p&gt;I love to read books, and this passion led me to author several titles. Below are the books I have published across various publications.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;building-decentralized-blockchain-applications-2nd-edition&#34;&gt;&lt;strong&gt;Building Decentralized Blockchain Applications (2nd Edition)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Learn how to use blockchain as the foundation for next-gen apps.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Publication House:&lt;/strong&gt; BPB Publication&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Link:&lt;/strong&gt; &lt;a href=&#34;https://www.amazon.in/Building-Decentralized-Blockchain-Applications-blockchain-ebook/dp/B0DVGRLCY1/&#34;&gt;Click here to learn more&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;learning-azure-cosmos-db&#34;&gt;&lt;strong&gt;Learning Azure Cosmos DB&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; A beginner&amp;rsquo;s guide to creating scalable, globally distributed, and highly responsive applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Publication House:&lt;/strong&gt; Packt Publication&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Link:&lt;/strong&gt; &lt;a href=&#34;https://www.amazon.in/gp/product/1788476174/ref=dbs_a_def_rwt_hsch_vapi_taft_p1_i2&#34;&gt;Click here to learn more&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;mastering-rethinkdb&#34;&gt;&lt;strong&gt;Mastering RethinkDB&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Master the capabilities of RethinkDB and implement them to develop efficient real-time web applications.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Publication House:&lt;/strong&gt; Packt Publication&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Link:&lt;/strong&gt; &lt;a href=&#34;https://www.amazon.in/Mastering-RethinkDB-Shahid-Shaikh/dp/1786461072/&#34;&gt;Click here to learn more&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;sailsjs-essentials&#34;&gt;&lt;strong&gt;Sails.js Essentials&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Get up to speed with the Sails.js development framework with this fast-paced tutorial.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Publication House:&lt;/strong&gt; Packt Publication&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Link:&lt;/strong&gt; &lt;a href=&#34;https://www.amazon.in/Sails-js-Essentials-Shaikh-Shahid/dp/1783554533&#34;&gt;Click here to learn more&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;&#xA;&lt;p&gt;You can contact me at &lt;strong&gt;&lt;a href=&#34;mailto:hello@shaikhshahid.com&#34;&gt;hello@shaikhshahid.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Paper Shelf</title>
+      <link>http://localhost:1313/papershelf/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/papershelf/</guid>
+      <description>&lt;p&gt;I like reading and publishing research papers. Some of the good findings will be listed here.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/11oYfSgtJWE887BZWrku201RZXfXWYo4z/view&#34;&gt;Why Language model hallucinate by OpenAI&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/1TlIFJOOy5-vstDiGJre9z6pXJGLdDVUG/view&#34;&gt;Agentic Content Protocol (ACP): A Whitepaper for Sustainable AI-Publisher Interaction by Shahid Shaikh&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Privacy policy</title>
+      <link>http://localhost:1313/privacy-policy/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/privacy-policy/</guid>
+      <description>&lt;h2 id=&#34;who-we-are&#34;&gt;Who we are&lt;/h2&gt;&#xA;&lt;h3&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Our website address is &lt;a href=&#34;https://shaikhshahid.com&#34;&gt;https://shaikhshahid.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;&#xA;&lt;h3&gt;&lt;/h3&gt;&#xA;&lt;p&gt;When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.&lt;/p&gt;&#xA;&lt;p&gt;An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: &lt;a href=&#34;https://automattic.com/privacy/&#34;&gt;https://automattic.com/privacy/&lt;/a&gt;. After approval of your comment, your profile picture is visible to the public in the context of your comment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
+      <description>&lt;p&gt;Here are a few projects and experiments I’ve worked on. I’ll keep expanding this list over time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/redistill-io/redistill&#34;&gt;Redistill&lt;/a&gt; — Extremely fast Redis-compatible KV database 🔥&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/Atlas&#34;&gt;Atlas&lt;/a&gt; — Open source AI answer engine 🤖&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/mumbaiaqi&#34;&gt;Mumbai AQI&lt;/a&gt; — Community-driven AQI tracker &amp;amp; recommendation platform 🌫️📈&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/decentralized-email&#34;&gt;Decentralised Email&lt;/a&gt; — Peer-to-peer email platform ✉️🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/accionlabs/Maze-Framework&#34;&gt;Maze Framework&lt;/a&gt; — Open source P2P app development platform 🧭&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/carbon-credit-exchange&#34;&gt;Carbon Credit Exchange&lt;/a&gt; — Carbon credit exchange with blockchain verification and traceability 🌱🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/codeforgeek/node-refresh-token&#34;&gt;Node Token Manager&lt;/a&gt; — Node refresh token manager 🔐&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/ismailvalid/tree/main&#34;&gt;Is Mail Valid&lt;/a&gt; — Email verification platform ✅&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/sweet-lstat&#34;&gt;Sweet LSTAT&lt;/a&gt; — More descriptive lstat messages 🛠️&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/payload-validator&#34;&gt;Payload Validator&lt;/a&gt; — API payload validator for Node.js 🧩&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/corona-stats&#34;&gt;Corona Stats&lt;/a&gt; — Track COVID-19 country-level data 🦠📊&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Sql Query to Check if Name Begins and Ends With Vowels</title>
+      <link>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</link>
+      <pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
+      <guid>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</guid>
+      <description>&lt;p&gt;Here is a SQL query to check if the name begins and ends with vowels. Assuming you are running this in a MySQL database engine.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; NAME&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; USERS&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; NAME RLIKE &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;^[AEIOU].*[aeiou]$&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we are using RLIKE operator to run a regular expression against a column. The regular expression contains the check against the first and last characters with the vowels alphabet in both capital and small letters.&lt;/p&gt;&#xA;&lt;p&gt;It would be best if you had the USERS table in your database and data containing some names to run the query.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mysql Query Caching With Redis</title>
+      <link>http://localhost:1313/blog/mysql-query-caching-with-redis/</link>
+      <pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
+      <guid>http://localhost:1313/blog/mysql-query-caching-with-redis/</guid>
+      <description>&lt;p&gt;By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.&lt;/p&gt;&#xA;&lt;p&gt;Caching can be done using a variety of different technologies, such as MySQL and Redis. We&amp;rsquo;ll look at both of these technologies in this post and see how they may be applied to caching.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Chatgpt</title>
+      <link>http://localhost:1313/blog/getting-started-with-chatgpt/</link>
+      <pubDate>Sat, 31 Dec 2022 11:58:04 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-chatgpt/</guid>
+      <description>&lt;p&gt;OpenAI developed ChatGPT specifically for chatbot applications. Its underlying architecture, the GPT (Generative Pre-training Transformer), has a proven track record of excellence in a range of natural language processing applications.&lt;/p&gt;&#xA;&lt;p&gt;One of ChatGPT&amp;rsquo;s main features is its ability to generate text input responses that resemble human responses. Because it has been trained on a huge dataset of interactions, it can understand the context and flow of a discussion and offer appropriate responses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Api in Go Using Gin Framework</title>
+      <link>http://localhost:1313/blog/api-in-go-using-gin-framework/</link>
+      <pubDate>Tue, 22 Feb 2022 11:56:57 +0530</pubDate>
+      <guid>http://localhost:1313/blog/api-in-go-using-gin-framework/</guid>
+      <description>&lt;p&gt;Gin is a popular HTTP web framework for the Go programming language. It is designed to be a simple and lightweight framework, with a focus on high performance and ease of use. In this article, we&amp;rsquo;ll take a look at some of the key features of the Gin framework and how you can use it to build a RESTful API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;router&#34;&gt;Router&lt;/h2&gt;&#xA;&lt;p&gt;One of the key features of Gin is its router, which is used to define the routes and handler functions for your API. You can define routes using the &lt;code&gt;GET&lt;/code&gt;, &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and other HTTP verbs, and specify a handler function that will be called when a request is made to that route. Here&amp;rsquo;s an example of how you might define a simple route in Gin:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Shahid Shaikh</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on Shahid Shaikh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Aug 2025 11:55:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What the Heck Is Agentic Ai Anyway</title>
+      <link>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</link>
+      <pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</guid>
+      <description>&lt;h2 id=&#34;the-simple-answer&#34;&gt;The Simple Answer&lt;/h2&gt;&#xA;&lt;p&gt;&amp;hellip;There is no simple answer.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the 10,000x scoped-out bird&amp;rsquo;s-eye view for you.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Regular AI talks to you. Agentic AI does things for you.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Remember when ChatGPT first blew everyone&amp;rsquo;s minds in 2022? It could have conversations, answer questions, and write pretty much anything you asked for. That was amazing, but it had one big limitation — it could only talk. It couldn&amp;rsquo;t actually &lt;em&gt;do&lt;/em&gt; anything in the real world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10 Chatgpt Prompts to Boost Developer Productivity</title>
+      <link>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</link>
+      <pubDate>Tue, 10 Jun 2025 11:56:14 +0530</pubDate>
+      <guid>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</guid>
+      <description>&lt;p&gt;As developers and engineers, we constantly seek ways to streamline our workflows, increase productivity, and solve complex problems efficiently. With the advent of advanced language models like ChatGPT, we now have powerful tools to assist us in our daily tasks.&lt;/p&gt;&#xA;&lt;p&gt;By leveraging the capabilities of ChatGPT, we can generate prompts that enhance our productivity and creativity, making us more effective problem solvers and innovators.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we&amp;rsquo;ll explore 10 ChatGPT prompts tailored specifically for developers and engineers to boost their productivity and streamline their workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pushing Data to Amazon Kinesis Firehose Using Golang Sdk</title>
+      <link>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</link>
+      <pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
+      <guid>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</guid>
+      <description>&lt;p&gt;The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.&lt;/p&gt;&#xA;&lt;p&gt;Get an AWS account if you don&amp;rsquo;t have it already. Log in to the AWS console and search for &amp;ldquo;firehose&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Gemini Flash Model</title>
+      <link>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</link>
+      <pubDate>Tue, 21 May 2024 11:55:53 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</guid>
+      <description>&lt;p&gt;Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the &lt;a href=&#34;https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Email Spam Detection Model Python</title>
+      <link>http://localhost:1313/blog/email-spam-detection-model-python/</link>
+      <pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
+      <guid>http://localhost:1313/blog/email-spam-detection-model-python/</guid>
+      <description>&lt;p&gt;I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sql Query to Check if Name Begins and Ends With Vowels</title>
+      <link>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</link>
+      <pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
+      <guid>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</guid>
+      <description>&lt;p&gt;Here is a SQL query to check if the name begins and ends with vowels. Assuming you are running this in a MySQL database engine.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; NAME&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; USERS&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; NAME RLIKE &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;^[AEIOU].*[aeiou]$&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we are using RLIKE operator to run a regular expression against a column. The regular expression contains the check against the first and last characters with the vowels alphabet in both capital and small letters.&lt;/p&gt;&#xA;&lt;p&gt;It would be best if you had the USERS table in your database and data containing some names to run the query.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mysql Query Caching With Redis</title>
+      <link>http://localhost:1313/blog/mysql-query-caching-with-redis/</link>
+      <pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
+      <guid>http://localhost:1313/blog/mysql-query-caching-with-redis/</guid>
+      <description>&lt;p&gt;By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.&lt;/p&gt;&#xA;&lt;p&gt;Caching can be done using a variety of different technologies, such as MySQL and Redis. We&amp;rsquo;ll look at both of these technologies in this post and see how they may be applied to caching.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started With Chatgpt</title>
+      <link>http://localhost:1313/blog/getting-started-with-chatgpt/</link>
+      <pubDate>Sat, 31 Dec 2022 11:58:04 +0530</pubDate>
+      <guid>http://localhost:1313/blog/getting-started-with-chatgpt/</guid>
+      <description>&lt;p&gt;OpenAI developed ChatGPT specifically for chatbot applications. Its underlying architecture, the GPT (Generative Pre-training Transformer), has a proven track record of excellence in a range of natural language processing applications.&lt;/p&gt;&#xA;&lt;p&gt;One of ChatGPT&amp;rsquo;s main features is its ability to generate text input responses that resemble human responses. Because it has been trained on a huge dataset of interactions, it can understand the context and flow of a discussion and offer appropriate responses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Api in Go Using Gin Framework</title>
+      <link>http://localhost:1313/blog/api-in-go-using-gin-framework/</link>
+      <pubDate>Tue, 22 Feb 2022 11:56:57 +0530</pubDate>
+      <guid>http://localhost:1313/blog/api-in-go-using-gin-framework/</guid>
+      <description>&lt;p&gt;Gin is a popular HTTP web framework for the Go programming language. It is designed to be a simple and lightweight framework, with a focus on high performance and ease of use. In this article, we&amp;rsquo;ll take a look at some of the key features of the Gin framework and how you can use it to build a RESTful API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;router&#34;&gt;Router&lt;/h2&gt;&#xA;&lt;p&gt;One of the key features of Gin is its router, which is used to define the routes and handler functions for your API. You can define routes using the &lt;code&gt;GET&lt;/code&gt;, &lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;PUT&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and other HTTP verbs, and specify a handler function that will be called when a request is made to that route. Here&amp;rsquo;s an example of how you might define a simple route in Gin:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

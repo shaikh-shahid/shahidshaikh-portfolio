@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Pushing Data to Amazon Kinesis Firehose Using Golang Sdk - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.
+Get an AWS account if you don&rsquo;t have it already. Log in to the AWS console and search for &ldquo;firehose&rdquo;." />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/">
+  <meta property="og:site_name" content="Shahid Shaikh">
+  <meta property="og:title" content="Pushing Data to Amazon Kinesis Firehose Using Golang Sdk">
+  <meta property="og:description" content="The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.
+Get an AWS account if you don’t have it already. Log in to the AWS console and search for “firehose”.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-06-12T11:55:34+05:30">
+    <meta property="article:modified_time" content="2024-06-12T11:55:34+05:30">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Firehose">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pushing Data to Amazon Kinesis Firehose Using Golang Sdk">
+  <meta name="twitter:description" content="The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.
+Get an AWS account if you don’t have it already. Log in to the AWS console and search for “firehose”.">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Pushing Data to Amazon Kinesis Firehose Using Golang Sdk</h1>
+          <div class="meta">Posted on Jun 12, 2024</div>
+        </div>
+        
+        <section class="body">
+          <p>The Kinesis Firehose is a managed AWS service and it allows us to push data in real-time and travel it to different destinations such as Datalakes, etc. In this quick tutorial, I am going to walk you through a sample code and we will create a Firehose steam and push data from our code to the stream and finally to the S3 bucket.</p>
+<p>Get an AWS account if you don&rsquo;t have it already. Log in to the AWS console and search for &ldquo;firehose&rdquo;.</p>
+<p>Click on the &ldquo;Create Firehose Stream&rdquo; button and follow the prompt.</p>
+<p><img src="create-firehose-stream.webp" alt="Create Firehose Stream"></p>
+<p>Select Source as &ldquo;DirectPut&rdquo;. We will be pushing data from the code using this method.</p>
+<p>Select Destination as Amazon S3 bucket.</p>
+<p><img src="firehose-destination.webp" alt="Firehose Destination"></p>
+<p>Select an existing bucket or create one.</p>
+<p>Scroll down and click on &ldquo;Create Firehose Stream&rdquo;. This will take a couple of seconds and we should have our stream ready to use. Let&rsquo;s code it out.</p>
+<h2 id="aws-firehose-integration-with-golang">AWS Firehose Integration with GoLang</h2>
+<p>Create a new Go project using the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    go mod init github.com/username/reponame
+</span></span></code></pre></div><p>Install the following dependencies.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    go get -u github.com/aws/aws-sdk-go/aws
+</span></span><span style="display:flex;"><span>    go get -u github.com/aws/aws-sdk-go/aws/session
+</span></span><span style="display:flex;"><span>    go get -u github.com/aws/aws-sdk-go/service/firehose
+</span></span></code></pre></div><p>Grab your AWS credentials and put them in a file named <strong>aws_credentials</strong>.<strong>json</strong> in this format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;access_key_id&#34;</span>: <span style="color:#e6db74">&#34;your_aws_access_key_id&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;secret_access_key&#34;</span>: <span style="color:#e6db74">&#34;your_aws_secret_access_key&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;region&#34;</span>: <span style="color:#e6db74">&#34;your_aws_region&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Copy this code in the <strong>app.go</strong> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;encoding/json&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;io/ioutil&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;github.com/aws/aws-sdk-go/aws&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;github.com/aws/aws-sdk-go/aws/credentials&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;github.com/aws/aws-sdk-go/aws/session&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;github.com/aws/aws-sdk-go/service/firehose&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// AWSConfig stores the AWS credentials</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">AWSConfig</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">AccessKeyID</span>     <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;access_key_id&#34;`</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">SecretAccessKey</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;secret_access_key&#34;`</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">Region</span>          <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;region&#34;`</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Read AWS credentials from a JSON file</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">awsConfig</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">readAWSConfig</span>(<span style="color:#e6db74">&#34;aws_credentials.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;Failed to read AWS credentials: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Create a new AWS session</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">sess</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">NewSession</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">aws</span>.<span style="color:#a6e22e">Config</span>{
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">Region</span>:      <span style="color:#a6e22e">aws</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">awsConfig</span>.<span style="color:#a6e22e">Region</span>),
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">Credentials</span>: <span style="color:#a6e22e">credentials</span>.<span style="color:#a6e22e">NewStaticCredentials</span>(<span style="color:#a6e22e">awsConfig</span>.<span style="color:#a6e22e">AccessKeyID</span>, <span style="color:#a6e22e">awsConfig</span>.<span style="color:#a6e22e">SecretAccessKey</span>, <span style="color:#e6db74">&#34;&#34;</span>),
+</span></span><span style="display:flex;"><span>    	})
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;Failed to create AWS session: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Create a new Firehose client</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">firehoseClient</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">firehose</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">sess</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Sample JSON data</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">&#34;data&#34;</span>: <span style="color:#e6db74">&#34;100000&#34;</span>,
+</span></span><span style="display:flex;"><span>    		<span style="color:#e6db74">&#34;val&#34;</span>:  <span style="color:#e6db74">&#34;20&#34;</span>,
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Convert data to JSON</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">jsonData</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;Failed to marshal JSON data: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Push the JSON data to Firehose</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">deliveryStreamName</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;PUT-S3-ql0D4&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">input</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">firehose</span>.<span style="color:#a6e22e">PutRecordInput</span>{
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">DeliveryStreamName</span>: <span style="color:#a6e22e">aws</span>.<span style="color:#a6e22e">String</span>(<span style="color:#a6e22e">deliveryStreamName</span>),
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">Record</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">firehose</span>.<span style="color:#a6e22e">Record</span>{
+</span></span><span style="display:flex;"><span>    			<span style="color:#a6e22e">Data</span>: append(<span style="color:#a6e22e">jsonData</span>, <span style="color:#e6db74">&#39;\n&#39;</span>), <span style="color:#75715e">// Firehose expects newline-delimited JSON</span>
+</span></span><span style="display:flex;"><span>    		},
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">firehoseClient</span>.<span style="color:#a6e22e">PutRecord</span>(<span style="color:#a6e22e">input</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalf</span>(<span style="color:#e6db74">&#34;Failed to put record to Firehose: %v&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Successfully put record to Firehose: %v\n&#34;</span>, <span style="color:#a6e22e">result</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// readAWSConfig reads the AWS credentials from a JSON file</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">readAWSConfig</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">AWSConfig</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">filename</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to open AWS credentials file: %w&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">bytes</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">file</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to read AWS credentials file: %w&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#a6e22e">AWSConfig</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">bytes</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">config</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;failed to unmarshal AWS credentials JSON: %w&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">config</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Run the code using the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    go run app.go
+</span></span></code></pre></div><p>You should see output like this.</p>
+<p><img src="output.webp" alt="Output"></p>
+<p>Now head over to the AWS S3 bucket and you should see the folder with the year/month/date format. Navigate it to see the data.</p>
+<p>You can modify how you want to name the files and prefixes in the configuration of streams.</p>
+<p>Learn more about AWS Firehose from this <a href="https://aws.amazon.com/firehose/">documentation</a>.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/aws/">aws</a></li>
+              
+              <li><a href="/tags/firehose/">firehose</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

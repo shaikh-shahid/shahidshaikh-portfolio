@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Mysql Query Caching With Redis - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
+Caching can be done using a variety of different technologies, such as MySQL and Redis. We&rsquo;ll look at both of these technologies in this post and see how they may be applied to caching." />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/mysql-query-caching-with-redis/">
+  <meta property="og:site_name" content="Shahid Shaikh">
+  <meta property="og:title" content="Mysql Query Caching With Redis">
+  <meta property="og:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
+Caching can be done using a variety of different technologies, such as MySQL and Redis. We’ll look at both of these technologies in this post and see how they may be applied to caching.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-01-06T11:57:17+05:30">
+    <meta property="article:modified_time" content="2023-01-06T11:57:17+05:30">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="Redis">
+    <meta property="article:tag" content="Performance">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mysql Query Caching With Redis">
+  <meta name="twitter:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
+Caching can be done using a variety of different technologies, such as MySQL and Redis. We’ll look at both of these technologies in this post and see how they may be applied to caching.">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Mysql Query Caching With Redis</h1>
+          <div class="meta">Posted on Jan 6, 2023</div>
+        </div>
+        
+        <section class="body">
+          <p>By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.</p>
+<p>Caching can be done using a variety of different technologies, such as MySQL and Redis. We&rsquo;ll look at both of these technologies in this post and see how they may be applied to caching.</p>
+<h2 id="mysql">MySQL</h2>
+<p>Frequently used to store and retrieve data for web-based applications, MySQL is a well-known open-source relational database management system (RDBMS). Data that is stored in tables is managed and manipulated using SQL, or structured query language.</p>
+<p>Creating a unique database or table just for caching reasons is one technique to use MySQL for caching. The cached data would be kept in this table along with a key and a timestamp to show when the data was most recently updated.</p>
+<p>If you are already using MySQL as your primary database then you can use the table cache method. By using this approach, you can also cache complex data structures, as MySQL supports a wide range of data types and can store structured data in tables.</p>
+<p>However, I strongly recommend keeping the cache data store separate and my choice of weapon is <strong>Redis</strong>.</p>
+<h2 id="redis">Redis</h2>
+<p>Redis is a key-value in-memory data store that can be used as a cache, a message broker, or a database. Redis is popular for its high performance and scalability and is often used in situations where a high level of throughput is required.</p>
+<p>Like MySQL, Redis can be used to store cached data in a key-value format. However, unlike MySQL, which stores data on disk, Redis stores all of its data in memory. This makes it extremely fast for reading and writing data, but also means that <strong>it can&rsquo;t store as much data as a disk-based system like MySQL.</strong></p>
+<h2 id="mysql-query-caching-with-redis">MySQL Query Caching with Redis</h2>
+<p>Let&rsquo;s see how we can use Redis as a cache store while using MySQL as a primary data store.</p>
+<p>In a nutshell, you need to set up a Redis server along with a MySQL server and use it to store cached data in memory. When a request for data is made, the application needs to check the Redis cache to see if the data is present. If it is, the application can retrieve the data from the cache and use it.</p>
+<p>If the data is not present or has expired, the application can retrieve the data from the original source and update the cache in Redis.</p>
+<p>Let&rsquo;s learn it with an example. Here is a GoLang code that demonstrates how we can use Redis with MySQL. Assuming MySQL and Redis is installed in the machine.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">import</span> (
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;database/sql&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;github.com/go-redis/redis&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/go-sql-driver/mysql&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// User represents a user in the database
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">User</span> <span style="color:#a6e22e">struct</span> {
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">ID</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">Name</span> <span style="color:#a6e22e">string</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Connect to the MySQL database
+</span></span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">db</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;mysql&#34;</span>, <span style="color:#e6db74">&#34;user:password@/database&#34;</span>)
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Connect to the Redis cache
+</span></span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">cache</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">Options</span>{
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">Addr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;localhost:6379&#34;</span>,
+</span></span><span style="display:flex;"><span>    	})
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#75715e">// Get a user from the database or cache
+</span></span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">User</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;user:1&#34;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cache</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">key</span>).<span style="color:#a6e22e">Result</span>()
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">Nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#75715e">// Key not found in cache, get it from the database
+</span></span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">err</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">QueryRow</span>(<span style="color:#e6db74">&#34;SELECT id, name FROM users WHERE id = ?&#34;</span>, <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">Scan</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">nil</span> {
+</span></span><span style="display:flex;"><span>    			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    		}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    		<span style="color:#75715e">// Save the user to the cache
+</span></span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">cache</span>.<span style="color:#a6e22e">Set</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">user</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    	} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">nil</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    		<span style="color:#75715e">// Key found in cache, decode it
+</span></span></span><span style="display:flex;"><span>    		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sscanf</span>(<span style="color:#a6e22e">val</span>, <span style="color:#e6db74">&#34;%d %s&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">ID</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">user</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Let&rsquo;s understand the code. First, we connect to a MySQL database and a Redis cache. Then code tries to get a user with a specific ID from the cache. If the key is not found in the cache, it retrieves the user from the MySQL database and saves it to the cache. If the key is found in the cache, it decodes the value and creates a User struct from it.</p>
+<p>Let&rsquo;s take a look at another example written in Node.js.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mysql</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;mysql&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">redis</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;redis&#39;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Connect to the MySQL database
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mysql</span>.<span style="color:#a6e22e">createConnection</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;localhost&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;user&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;password&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">database</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;database&#39;</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Connect to the Redis cache
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cache</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">createClient</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">host</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;localhost&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6379</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get a user from the database or cache
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cache</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`user:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">result</span>) =&gt; {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Key found in cache, return the result
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">result</span>));
+</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Key not found in cache, get it from the database
+</span></span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">query</span>(<span style="color:#e6db74">`SELECT id, name FROM users WHERE id = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">results</span>) =&gt; {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// Save the user to the cache
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">cache</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">`user:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">user</span>), <span style="color:#e6db74">&#39;EX&#39;</span>, <span style="color:#ae81ff">3600</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">user</span>);
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getUser</span>(<span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">user</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><p>Again, the code shown above will first connect to a MySQL database and a Redis cache. We are defining a  function <strong>getUser</strong> that takes an ID as a parameter and returns a promise that resolves to a user object. The function tries to get the user from the cache by its user ID present in the parameter.</p>
+<p>If the key is not found in the cache (i.e., the result is null), it retrieves the user from the MySQL table and saves it to the cache. If the key is found in the cache, it parses the value and returns it as a JavaScript object.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both MySQL and Redis can be used as effective caching technologies, depending on the needs of your application. MySQL is a good choice for caching structured data and for situations where you are already using MySQL as your primary data store. Redis is a good choice for caching large amounts of data and for situations where very fast read and write performance is required. I have used this combination in various solutions and it never ceases to amaze me.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/mysql/">mysql</a></li>
+              
+              <li><a href="/tags/redis/">redis</a></li>
+              
+              <li><a href="/tags/performance/">performance</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>
