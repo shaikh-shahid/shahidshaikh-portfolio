@@ -3,6 +3,7 @@ date = '2022-12-31T11:58:04+05:30'
 draft = false
 title = 'Getting Started With Chatgpt'
 tags = ["artificial-intelligence", "gpt"]
+aliases = ["/blog/getting-started-with-chatgpt/31/"]
 +++
 OpenAI developed ChatGPT specifically for chatbot applications. Its underlying architecture, the GPT (Generative Pre-training Transformer), has a proven track record of excellence in a range of natural language processing applications.
 
