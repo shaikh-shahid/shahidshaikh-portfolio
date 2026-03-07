@@ -6,8 +6,15 @@
     <description>Recent content in Shaikh Shahid on Shahid Shaikh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Aug 2025 11:55:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 21:55:15 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MemX - Local First AI Memory Layer</title>
+      <link>http://localhost:1313/blog/memx-local-first-ai-memory-layer/</link>
+      <pubDate>Sat, 07 Mar 2026 21:55:15 +0530</pubDate>
+      <guid>http://localhost:1313/blog/memx-local-first-ai-memory-layer/</guid>
+      <description>&lt;p&gt;MemX is a &lt;strong&gt;NoBS local first AI memory layer&lt;/strong&gt; built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.&lt;/p&gt;&#xA;&lt;p&gt;I generally use Claude and ChatGPT to research things and then once I have reasonable research done I move to Claude Code or Cursor to start the build process. Here I had to either generate a prompt again from the research or ask Claude/ChatGPT to generate a long ass prompt for me thus wasting both compute and time. Also post research there when I revisit it back there is a high chance AI forgets things and hellucinate and behave wierd.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What the Heck Is Agentic Ai Anyway</title>
       <link>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</link>
@@ -37,10 +44,10 @@
       <description>&lt;p&gt;Google introduced the Gemini Flash model in the Google I/O 2024 event. Gemini Flash is a lightweight model, optimized for speed and efficiency and supports multimode reasoning. I tried it out in my machine and I must say I am impressed. I do have a GitHub repository containing the notebook file. For curious ones out there who want to jump and code, here is the &lt;a href=&#34;https://github.com/shaikh-shahid/Gemini-Quickstarter-Notebook/blob/main/quickstart_gemini.ipynb&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In this tutorial, we are going to learn how to get started with Gemini Flash and use its models.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Email Spam Detection Model Python</title>
-      <link>http://localhost:1313/blog/email-spam-detection-model-python/</link>
+      <title>Email Spam Detection Model in Python</title>
+      <link>http://localhost:1313/blog/email-spam-detection-model-in-python/</link>
       <pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
-      <guid>http://localhost:1313/blog/email-spam-detection-model-python/</guid>
+      <guid>http://localhost:1313/blog/email-spam-detection-model-in-python/</guid>
       <description>&lt;p&gt;I am pretty sure everyone who is reading this knows about email spam. This is a very general problem; almost all major email platforms have solved this problem to some extent. But, have you wondered how it actually works? In this article, we are going to explore the same and build and train a Machine Learning model that will detect incoming email and identify it as spam or ham.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;This is going to little a lengthy tutorial so be ready with your coffee and make sure the following software is already installed on your machine:&lt;/p&gt;</description>
     </item>
     <item>
@@ -83,7 +90,7 @@
       <link>http://localhost:1313/projects/</link>
       <pubDate>Sat, 10 Jun 2023 11:56:14 +0530</pubDate>
       <guid>http://localhost:1313/projects/</guid>
-      <description>&lt;p&gt;Here are a few projects and experiments I’ve worked on. I’ll keep expanding this list over time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/redistill-io/redistill&#34;&gt;Redistill&lt;/a&gt; — Extremely fast Redis-compatible KV database 🔥&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/Atlas&#34;&gt;Atlas&lt;/a&gt; — Open source AI answer engine 🤖&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/mumbaiaqi&#34;&gt;Mumbai AQI&lt;/a&gt; — Community-driven AQI tracker &amp;amp; recommendation platform 🌫️📈&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/decentralized-email&#34;&gt;Decentralised Email&lt;/a&gt; — Peer-to-peer email platform ✉️🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/accionlabs/Maze-Framework&#34;&gt;Maze Framework&lt;/a&gt; — Open source P2P app development platform 🧭&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/carbon-credit-exchange&#34;&gt;Carbon Credit Exchange&lt;/a&gt; — Carbon credit exchange with blockchain verification and traceability 🌱🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/codeforgeek/node-refresh-token&#34;&gt;Node Token Manager&lt;/a&gt; — Node refresh token manager 🔐&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/ismailvalid/tree/main&#34;&gt;Is Mail Valid&lt;/a&gt; — Email verification platform ✅&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/sweet-lstat&#34;&gt;Sweet LSTAT&lt;/a&gt; — More descriptive lstat messages 🛠️&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/payload-validator&#34;&gt;Payload Validator&lt;/a&gt; — API payload validator for Node.js 🧩&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/corona-stats&#34;&gt;Corona Stats&lt;/a&gt; — Track COVID-19 country-level data 🦠📊&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;p&gt;Here are a few projects and experiments I’ve worked on. I’ll keep expanding this list over time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://redistill.org/&#34;&gt;Redistill&lt;/a&gt; — Extremely fast Redis-compatible KV database 🔥&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/Atlas&#34;&gt;Atlas&lt;/a&gt; — Open source AI answer engine 🤖&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/mumbaiaqi&#34;&gt;Mumbai AQI&lt;/a&gt; — Community-driven AQI tracker &amp;amp; recommendation platform 🌫️📈&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/decentralized-email&#34;&gt;Decentralised Email&lt;/a&gt; — Peer-to-peer email platform ✉️🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/accionlabs/Maze-Framework&#34;&gt;Maze Framework&lt;/a&gt; — Open source P2P app development platform 🧭&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/carbon-credit-exchange&#34;&gt;Carbon Credit Exchange&lt;/a&gt; — Carbon credit exchange with blockchain verification and traceability 🌱🔗&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/codeforgeek/node-refresh-token&#34;&gt;Node Token Manager&lt;/a&gt; — Node refresh token manager 🔐&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/ismailvalid/tree/main&#34;&gt;Is Mail Valid&lt;/a&gt; — Email verification platform ✅&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/shaikh-shahid/sweet-lstat&#34;&gt;Sweet LSTAT&lt;/a&gt; — More descriptive lstat messages 🛠️&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/payload-validator&#34;&gt;Payload Validator&lt;/a&gt; — API payload validator for Node.js 🧩&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/corona-stats&#34;&gt;Corona Stats&lt;/a&gt; — Track COVID-19 country-level data 🦠📊&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Sql Query to Check if Name Begins and Ends With Vowels</title>

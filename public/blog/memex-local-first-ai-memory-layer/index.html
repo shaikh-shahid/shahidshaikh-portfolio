@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Memex - Local First AI Memory Layer - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Memex is No a BS local first AI memory layer built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.
+I generally use Claude and ChatGPT to research things and then once I have reasonable research done I move to Claude Code or Cursor to start the build process. Here I had to either generate a prompt again from the research or ask Claude/ChatGPT to generate a long ass prompt for me thus wasting both compute and time. Also post research there when I revisit it back there is a high chance AI forgets things and hellucinate and behave wierd." />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/memex-local-first-ai-memory-layer/">
+  <meta property="og:site_name" content="Shahid Shaikh">
+  <meta property="og:title" content="Memex - Local First AI Memory Layer">
+  <meta property="og:description" content="Memex is No a BS local first AI memory layer built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.
+I generally use Claude and ChatGPT to research things and then once I have reasonable research done I move to Claude Code or Cursor to start the build process. Here I had to either generate a prompt again from the research or ask Claude/ChatGPT to generate a long ass prompt for me thus wasting both compute and time. Also post research there when I revisit it back there is a high chance AI forgets things and hellucinate and behave wierd.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-03-07T21:55:15+05:30">
+    <meta property="article:modified_time" content="2026-03-07T21:55:15+05:30">
+    <meta property="article:tag" content="Artificial-Intelligence">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Memex - Local First AI Memory Layer">
+  <meta name="twitter:description" content="Memex is No a BS local first AI memory layer built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.
+I generally use Claude and ChatGPT to research things and then once I have reasonable research done I move to Claude Code or Cursor to start the build process. Here I had to either generate a prompt again from the research or ask Claude/ChatGPT to generate a long ass prompt for me thus wasting both compute and time. Also post research there when I revisit it back there is a high chance AI forgets things and hellucinate and behave wierd.">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Memex - Local First AI Memory Layer</h1>
+          <div class="meta">Posted on Mar 7, 2026</div>
+        </div>
+        
+        <section class="body">
+          <p>Memex is No a BS local first AI memory layer built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.</p>
+<p>I generally use Claude and ChatGPT to research things and then once I have reasonable research done I move to Claude Code or Cursor to start the build process. Here I had to either generate a prompt again from the research or ask Claude/ChatGPT to generate a long ass prompt for me thus wasting both compute and time. Also post research there when I revisit it back there is a high chance AI forgets things and hellucinate and behave wierd.</p>
+<p>So I needed a memory, a store to keep my key data. Initially simple markdown file worked but that didn&rsquo;t solved most of my issues cause I was doing most of the work in terms of summarizing and adding/removing data.</p>
+<p>I looked at the current options. Mem0 stands out for me but it requires OpenAI integrations and it seems bloated for my use case. I wanted something simple, local first that just one thing well - store and fetch memory with summary and atomic facts. Nothing less and nothing more.</p>
+<h2 id="introducing-memex">Introducing Memex</h2>
+<p>This lead me to build Memex - local first AI memory layer that integrates with existing AI agents using MCP protocol. Memex is extremely simple and does not have any production grade features such as Auth or rate limiting and logging. It&rsquo;s designed mainly for my use case and I am sharing it here in case it helps you out.</p>
+<p>Checkout the <a href="https://github.com/shaikh-shahid/memex">Project</a></p>
+<h2 id="architecture">Architecture</h2>
+<p>Memex is built with Python and uses MCP protocol to integrate with existing AI agents. It uses SQLite as database and Ollama as AI backend.</p>
+<p>We use AI model for embedding and fact extraction. We use SQLite as database and sqlite-vec extension for vector search.</p>
+<p>The archiecture is kept minimal and focused on the core functionality. We have a simple CLI and a MCP server. The CLI is used to interact with the memory layer and the MCP server is used to integrate with existing AI agents.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Store and fetch memory with summary and atomic facts</li>
+<li>Integrate with existing AI agents using MCP protocol</li>
+<li>Simple and easy to use</li>
+<li>Local first and does not require any cloud services</li>
+<li>Does not have any production grade features such as Auth or rate limiting and logging</li>
+</ul>
+<h2 id="installation-in-your-local-machine">Installation (In your local machine)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/shaikh-shahid/memex.git
+</span></span><span style="display:flex;"><span>cd memex
+</span></span><span style="display:flex;"><span>python3 -m venv venv
+</span></span><span style="display:flex;"><span>source venv/bin/activate
+</span></span><span style="display:flex;"><span>python -m pip install -U pip
+</span></span><span style="display:flex;"><span>python -m pip install -e .
+</span></span></code></pre></div><p>Once installed, you can use the CLI to interact with the memory layer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>memex --help
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>memex add <span style="color:#e6db74">&#34;I prefer TypeScript over Python&#34;</span> --scope self
+</span></span><span style="display:flex;"><span>memex list
+</span></span><span style="display:flex;"><span>memex search <span style="color:#e6db74">&#34;what language do I prefer&#34;</span>
+</span></span></code></pre></div><h2 id="run-mcp-server">Run MCP Server</h2>
+<p>Use the following command to run the MCP server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>memex-server
+</span></span></code></pre></div><p>if you are like me and want to run it in background, you can use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>memex-server --bg
+</span></span></code></pre></div><p>and forget about it.</p>
+<h2 id="integrate-with-existing-ai-agents">Integrate with existing AI agents</h2>
+<p>You can integrate Memex with existing AI agents using MCP protocol.</p>
+<p>In Claude Desktop, you can add the following to your config.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;memex&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;memex-server&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In Cursor, you can add the following to your mcp.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;memex&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;memex-server&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In Windsurf, you can add the following to your mcp_config.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;memex&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;memex-server&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Refer the <a href="https://github.com/shaikh-shahid/memex?tab=readme-ov-file#6-mcp-app-setup">MCP Client Configuration</a> for more details.</p>
+<h2 id="demo">Demo</h2>
+<p>Here is the simple demo of how you can use Memex with Claude Desktop. After configuring the MCP server, you can simply ask Claude desktop to save the memory.</p>
+<p><img src="save-memory-claude.png" alt="Claude Desktop"></p>
+<p>Once it is saved. You can extract the memory from other AI agent tools like cursor.</p>
+<p>Here is the screenshot of the memory being extracted in Cursor.</p>
+<p><img src="extract-memory-cursor.png" alt="Cursor"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Memex is a simple and easy to use local first AI memory layer that integrates with existing AI agents using MCP protocol. It&rsquo;s designed mainly for my use case and I am sharing it here in case it helps you out.</p>
+<p>Checkout the <a href="https://github.com/shaikh-shahid/memex">Project</a></p>
+<h2 id="feedback">Feedback</h2>
+<p>If you have any feedback or suggestions, please feel free to open an issue or a pull request.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/artificial-intelligence/">artificial-intelligence</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>
