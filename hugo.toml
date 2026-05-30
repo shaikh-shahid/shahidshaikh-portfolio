@@ -62,6 +62,11 @@ theme = "archie"
   url = "/contact/"
   weight = 6
 
+[[menu.main]]
+  name = "Resume"
+  url = "https://tinyurl.com/yc4fct5h"
+  weight = 7
+
 [[params.social]]
   name = "X"
   icon = "simple:twitter"
