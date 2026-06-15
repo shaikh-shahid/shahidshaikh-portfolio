@@ -6,22 +6,22 @@
 Caching can be done using a variety of different technologies, such as MySQL and Redis. We&rsquo;ll look at both of these technologies in this post and see how they may be applied to caching." />
 	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
 	<meta property="og:url" content="http://localhost:1313/blog/mysql-query-caching-with-redis/">
-  <meta property="og:site_name" content="Shahid Shaikh">
-  <meta property="og:title" content="Mysql Query Caching With Redis">
-  <meta property="og:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
+	<meta property="og:site_name" content="Shahid Shaikh">
+	<meta property="og:title" content="Mysql Query Caching With Redis">
+	<meta property="og:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
 Caching can be done using a variety of different technologies, such as MySQL and Redis. We’ll look at both of these technologies in this post and see how they may be applied to caching.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2023-01-06T11:57:17+05:30">
-    <meta property="article:modified_time" content="2023-01-06T11:57:17+05:30">
-    <meta property="article:tag" content="Mysql">
-    <meta property="article:tag" content="Redis">
-    <meta property="article:tag" content="Performance">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2023-01-06T11:57:17+05:30">
+		<meta property="article:modified_time" content="2023-01-06T11:57:17+05:30">
+		<meta property="article:tag" content="Mysql">
+		<meta property="article:tag" content="Redis">
+		<meta property="article:tag" content="Performance">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mysql Query Caching With Redis">
-  <meta name="twitter:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Mysql Query Caching With Redis">
+	<meta name="twitter:description" content="By keeping frequently visited data in a temporary storage place known as a cache, caching is a common software development approach used to increase system efficiency. As a result, the system can access the data more quickly than if it had to go back to the original data source each time.
 Caching can be done using a variety of different technologies, such as MySQL and Redis. We’ll look at both of these technologies in this post and see how they may be applied to caching.">
 <link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
@@ -53,6 +53,8 @@ Caching can be done using a variety of different technologies, such as MySQL and
 		<a href="/papershelf/">Papershelf</a>
 		
 		<a href="/contact/">Contact</a>
+		
+		<a href="https://tinyurl.com/yc4fct5h">Resume</a>
 		
 		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="5"></circle>

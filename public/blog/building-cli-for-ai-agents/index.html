@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Building CLI for AI Agents - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="
+1990: Let&rsquo;s build a CLI 2026: Let&rsquo;s build a CLI
+
+CLI applications made a huge comeback in 2026, and I couldn&rsquo;t be happier. I love CLI apps, I build CLI apps and promote them as much as possible. We won&rsquo;t talk much about my love for CLI (I&rsquo;ll try) in this article, but explore the state of CLI development in 2026.CLIs was go to application in the 90s when DOS and the entire operating system were in CLI mode. The invention and mass adoption of GUI and mouse controls shifted the focus and adoption/development of CLI applications in the 2000s, but Cloud computing, containers, and infra-as-code brought CLI back into the limelight." />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg"/>
+	<meta property="og:url" content="http://localhost:1313/blog/building-cli-for-ai-agents/">
+	<meta property="og:site_name" content="Shahid Shaikh">
+	<meta property="og:title" content="Building CLI for AI Agents">
+	<meta property="og:description" content="1990: Let’s build a CLI 2026: Let’s build a CLI
+CLI applications made a huge comeback in 2026, and I couldn’t be happier. I love CLI apps, I build CLI apps and promote them as much as possible. We won’t talk much about my love for CLI (I’ll try) in this article, but explore the state of CLI development in 2026.CLIs was go to application in the 90s when DOS and the entire operating system were in CLI mode. The invention and mass adoption of GUI and mouse controls shifted the focus and adoption/development of CLI applications in the 2000s, but Cloud computing, containers, and infra-as-code brought CLI back into the limelight.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2026-06-15T14:06:49+05:30">
+		<meta property="article:modified_time" content="2026-06-15T14:06:49+05:30">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Building CLI for AI Agents">
+	<meta name="twitter:description" content="1990: Let’s build a CLI 2026: Let’s build a CLI
+CLI applications made a huge comeback in 2026, and I couldn’t be happier. I love CLI apps, I build CLI apps and promote them as much as possible. We won’t talk much about my love for CLI (I’ll try) in this article, but explore the state of CLI development in 2026.CLIs was go to application in the 90s when DOS and the entire operating system were in CLI mode. The invention and mass adoption of GUI and mouse controls shifted the focus and adoption/development of CLI applications in the 2000s, but Cloud computing, containers, and infra-as-code brought CLI back into the limelight.">
+<link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link rel="stylesheet" href="http://localhost:1313/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css" type="text/css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom-home.353f39e570ddbb9f58abe591bc7103663fdf5426fa95b2594e03d6f9e4b505f8.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Shahid Shaikh</a>
+	</div>
+	<nav>
+		
+		<a href="/about/">About</a>
+		
+		<a href="/blog/">Blog</a>
+		
+		<a href="/books/">Books</a>
+		
+		<a href="/projects/">Projects</a>
+		
+		<a href="/papershelf/">Papershelf</a>
+		
+		<a href="/contact/">Contact</a>
+		
+		<a href="https://tinyurl.com/yc4fct5h">Resume</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="http://localhost:1313/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Building CLI for AI Agents</h1>
+          <div class="meta">Posted on Jun 15, 2026</div>
+        </div>
+        
+        <section class="body">
+          <blockquote>
+<p>1990: Let&rsquo;s build a CLI 2026: Let&rsquo;s build a CLI</p>
+</blockquote>
+<p>CLI applications made a huge comeback in 2026, and I couldn&rsquo;t be happier. I love CLI apps, I build CLI apps and promote them as much as possible. We won&rsquo;t talk much about my love for CLI (I&rsquo;ll try) in this article, but explore the state of CLI development in 2026.CLIs was go to application in the 90s when DOS and the entire operating system were in CLI mode. The invention and mass adoption of GUI and mouse controls shifted the focus and adoption/development of CLI applications in the 2000s, but Cloud computing, containers, and infra-as-code brought CLI back into the limelight.</p>
+<h2 id="cli-and-its-renaissance-in-2026"><strong>CLI and</strong> its <strong>Renaissance in 2026</strong></h2>
+<p>AI agents in 2026 gave CLIs their due respect and recognition. AI agents prefer CLI over GUI because it&rsquo;s extremely easy to execute commands, read standard I/O, parse outputs if it&rsquo;s JSON and of course, the best of all - chain commands to execute multiple operations.Consider doing that in a GUI, AI agents need to take a screenshot, parse pixels, understand where the CTA is (burn those GPUs) and then make a click and wait for an extremely unfamiliar response. No thanks, CLI is better.</p>
+<h2 id="ai-agents-and-cli">AI Agents and CLI</h2>
+<p>The new consumers of your CLI apps are AI agents. Most of the CLI apps were designed for humans with descriptive outputs and verbose responses.</p>
+<blockquote>
+<p>Human -&gt; CLI</p>
+</blockquote>
+<p>Changed to</p>
+<blockquote>
+<p>Human -&gt; Agents -&gt; CLI</p>
+</blockquote>
+<p>The CLI in 2026 should be designed for humans and agents simultaneously.</p>
+<blockquote>
+<p>I believe many companies are over-investing in MCP servers and under-investing in their CLI experience. A clean CLI with structured output often delivers more value than a rushed MCP implementation.</p>
+</blockquote>
+<h2 id="agent-friendly-cli">Agent-friendly CLI</h2>
+<p>Surprisingly, we don&rsquo;t need to make tons of changes or re-engineer the entire CLI stack to make it Agent-friendly. Here are some tips to make your existing or new CLI app agent-friendly.</p>
+<ul>
+<li><strong>Structured output over verbose text</strong>: Agents hate verbose output. For example, consider this command.</li>
+</ul>
+<pre tabindex="0"><code>bash
+cli-app deploy
+</code></pre><p>and it outputs this.bash</p>
+<pre tabindex="0"><code>Deploying...
+Checking...
+Working...
+Done!
+</code></pre><p>Agents prefer structured output. For example, consider JSON output in the same command with a flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cli-app deploy --json
+</span></span></code></pre></div><p>and it outputs this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;success&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;deployment_id&#34;</span>: <span style="color:#e6db74">&#34;123&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>So if your CLI app supports JSON output, it already is compatible and preferred for AI agents. Do ensure that errors are also structured. Instead of a text error, send back the error in JSON format. Agents will use it to make decisions on the next command or retry attempt.</p>
+<ul>
+<li><strong>Make commands like endpoints:</strong> This is an extremely useful hack I found to be very useful for Agents. Ensure your CLI commands are discoverable and predictable. What&rsquo;s the best approach to be predictable? follow standards. I tried using REST standards in building CLI apps and found that Agents are able to discover and execute commands based on decisions without much interference or explanation. For example, instead of having commands like this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cli-app create-deployment
+</span></span><span style="display:flex;"><span>cli-app remove-deployment
+</span></span><span style="display:flex;"><span>cli-app show-deployment
+</span></span></code></pre></div><p>Design it like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cli-app deployment new 
+</span></span><span style="display:flex;"><span>cli-app deployment remove deploymentId
+</span></span><span style="display:flex;"><span>cli-app deployment get deploymentId
+</span></span><span style="display:flex;"><span>cli-app deployment list
+</span></span></code></pre></div><p>This is extremely useful for AI Agents.</p>
+<ul>
+<li>
+<p><strong>Exit Codes are non-negotiable:</strong> AI agents love error codes, and this is non-negotiable. Your CLI app should return an error code and ensure it follows the standard error code.I follow the error code standard mentioned on this <a href="https://tldp.org/LDP/abs/html/exitcodes.html">page</a>. Generally, this code will suffice for your use case. You can also refer to <a href="https://docs.aws.amazon.com/cli/latest/topic/return-codes.html">AWS error</a> codes.</p>
+</li>
+<li>
+<p><strong>Idempotent Commands</strong>: Agents retry commands upon failure, and this should be taken into account while building the CLI app. The retry attempts should not create unexpected side effects. The errors should be handled gracefully if they occur during retries rather than crashing.</p>
+</li>
+<li>
+<p><strong>Consider streaming for a long-running task:</strong> This is not mandatory, but it is one of the good-to-have features. Agents generally run long tasks, and sometimes those tasks take hours to complete. Instead of having Agent poll every few seconds, consider streaming your response and let Agent subscribe to the stream for updates. Streaming also provides a better user experience and helps the Agent monitor the progress of the task in a natural manner.</p>
+</li>
+<li>
+<p><strong>Guardrails for dangerous commands:</strong> Agents run commands automatically, and you should always have confirmation on commands that are going to change the system values, such as DELETE operations or DROP operations. Either allow them to use an extra flag, such as &ndash;yes or have the user confirm it (I prefer this)</p>
+</li>
+</ul>
+<h2 id="terminal-user-interfaces-in-cli-apps">Terminal user interfaces in CLI apps</h2>
+<p>AI Agents have revived the terminal user interface, a.k.a TUIs. The rise of Claude Code and Codex within the developer community is proof of TUI adoption. I love TUI apps, in fact, my high school project was a TUI app in C++ called <a href="https://github.com/shaikh-shahid/multiworker">multiworker</a>. TUI now supports lots of good interfaces such as progress bar, tables, dashboards, etc.We have different TUI frameworks for different programming languages. I prefer Go while building CLIs, and Go has rich TUI frameworks.Claude Code and Codex are built in Typescript and use the Ink framework. Ink is really good if you know React and offers you a good framework to handle interfaces, states, etc.There are also frameworks available for the Go and Rust languages. In the Go space <a href="https://github.com/charmbracelet/lipgloss">Lipgloss</a> library is very famous and useful. In Rust <a href="https://ratatui.rs/">RatatUI</a> is a go-to framework for TUI apps.</p>
+<h2 id="cli-as-an-integration-layer">CLI as an Integration Layer</h2>
+<p>CLI applications are now acting as an integration layer for the software systems. If your product exposes an Agent-friendly CLI, then you are already exposed to integration with 3rd party software and Agents.Lots of companies are asking whether they should build an SDK, MCP-Server, API or CLI. My take is they should focus on CLI first. Why, you ask? Because CLI offers way more value in a short span of development time. A well-designed CLI has the potential to become the foundation for everything else in the stack. APIs can power the CLI, MCP servers can wrap the CLI, and SDKs can be generated from the same backend capabilities. Starting with a CLI forces teams to think carefully about workflows, discoverability, and automation from day one.CLI provides you with an integration layer with pipeline support, a human interaction interface via TUI, and an agent-friendly interface via tool invocation. If you focus on CLI first, the ROI is greatest in my opinion.</p>
+<h2 id="future-of-cli-development">Future of CLI Development</h2>
+<p>The next generation of CLI apps won&rsquo;t be just made for humans. They will be AI native platforms with different interfaces for different use cases. They will be Agent-friendly, interactive, and MCP compatible. The biggest shift in 2026 is not that AI agents can use CLIs. It’s that AI agents prefer CLIs. For the first time in decades, command-line applications are no longer a legacy interface—they are becoming the primary operating surface for humans, automation systems, and AI agents alike.</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><i class="si si-twitter"></i></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><i class="si si-linkedin"></i></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><i class="si si-youtube"></i></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><i class="si si-github"></i></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

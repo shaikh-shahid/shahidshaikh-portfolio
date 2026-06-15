@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-06-15T14:06:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/building-cli-for-ai-agents/</loc>
+    <lastmod>2026-06-15T14:06:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-06-15T14:06:49+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/artificial-intelligence/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-03-07T21:55:15+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/memx-local-first-ai-memory-layer/</loc>
-    <lastmod>2026-03-07T21:55:15+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
