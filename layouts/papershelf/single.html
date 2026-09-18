@@ -1,0 +1,62 @@
+{{ define "main" }}
+<main class="papershelf-page">
+  <header class="papershelf-header">
+    <p class="home-section-kicker">Research shelf</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </header>
+
+  <section class="papershelf-themes" aria-labelledby="research-themes-title">
+    <h2 id="research-themes-title">Research themes</h2>
+    <div class="papershelf-theme-list">
+      {{ range .Params.themes }}<span>{{ . }}</span>{{ end }}
+    </div>
+  </section>
+
+  <section class="papershelf-section" aria-labelledby="authored-title">
+    <div class="papershelf-section-heading">
+      <div>
+        <p class="home-section-kicker">Published work</p>
+        <h2 id="authored-title">Authored research</h2>
+      </div>
+      <span class="papershelf-count">{{ len .Params.authored }} papers</span>
+    </div>
+    <div class="papershelf-grid">
+      {{ range .Params.authored }}
+      <article class="papershelf-card">
+        <div class="papershelf-card-label">Authored</div>
+        <h3><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a></h3>
+        <p>{{ .summary }}</p>
+        <div class="papershelf-tags">
+          {{ range .tags }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <a class="papershelf-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .link_label }} <span aria-hidden="true">⟶</span></a>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="papershelf-section" aria-labelledby="reading-title">
+    <div class="papershelf-section-heading">
+      <div>
+        <p class="home-section-kicker">Ideas worth returning to</p>
+        <h2 id="reading-title">Reading list</h2>
+      </div>
+      <span class="papershelf-count">{{ len .Params.reading }} paper</span>
+    </div>
+    <div class="papershelf-grid">
+      {{ range .Params.reading }}
+      <article class="papershelf-card papershelf-card-reading">
+        <div class="papershelf-card-label">Recommended reading</div>
+        <h3><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a></h3>
+        <p>{{ .summary }}</p>
+        <div class="papershelf-tags">
+          {{ range .tags }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <a class="papershelf-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .link_label }} <span aria-hidden="true">⟶</span></a>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+</main>
+{{ end }}

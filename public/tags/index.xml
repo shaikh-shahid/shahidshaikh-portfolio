@@ -2,99 +2,99 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on Shahid Shaikh</title>
-		<link>http://localhost:1313/tags/</link>
+		<link>https://shaikhshahid.com/tags/</link>
 		<description>Recent content in Tags on Shahid Shaikh</description>
 		<generator>Hugo</generator>
-		<language>en-us</language>
+		<language>en-US</language>
 		
 		
 		
 		
 			<lastBuildDate>Sat, 07 Mar 2026 21:55:15 +0530</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://shaikhshahid.com/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Artificial-Intelligence</title>
-				<link>http://localhost:1313/tags/artificial-intelligence/</link>
+				<link>https://shaikhshahid.com/tags/artificial-intelligence/</link>
 				<pubDate>Sat, 07 Mar 2026 21:55:15 +0530</pubDate>
-				<guid>http://localhost:1313/tags/artificial-intelligence/</guid>
+				<guid>https://shaikhshahid.com/tags/artificial-intelligence/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Agents</title>
-				<link>http://localhost:1313/tags/agents/</link>
+				<link>https://shaikhshahid.com/tags/agents/</link>
 				<pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
-				<guid>http://localhost:1313/tags/agents/</guid>
+				<guid>https://shaikhshahid.com/tags/agents/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Aws</title>
-				<link>http://localhost:1313/tags/aws/</link>
+				<link>https://shaikhshahid.com/tags/aws/</link>
 				<pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
-				<guid>http://localhost:1313/tags/aws/</guid>
+				<guid>https://shaikhshahid.com/tags/aws/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Firehose</title>
-				<link>http://localhost:1313/tags/firehose/</link>
+				<link>https://shaikhshahid.com/tags/firehose/</link>
 				<pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
-				<guid>http://localhost:1313/tags/firehose/</guid>
+				<guid>https://shaikhshahid.com/tags/firehose/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Machine-Learning</title>
-				<link>http://localhost:1313/tags/machine-learning/</link>
+				<link>https://shaikhshahid.com/tags/machine-learning/</link>
 				<pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
-				<guid>http://localhost:1313/tags/machine-learning/</guid>
+				<guid>https://shaikhshahid.com/tags/machine-learning/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Sql</title>
-				<link>http://localhost:1313/tags/sql/</link>
+				<link>https://shaikhshahid.com/tags/sql/</link>
 				<pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
-				<guid>http://localhost:1313/tags/sql/</guid>
+				<guid>https://shaikhshahid.com/tags/sql/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Tips</title>
-				<link>http://localhost:1313/tags/tips/</link>
+				<link>https://shaikhshahid.com/tags/tips/</link>
 				<pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
-				<guid>http://localhost:1313/tags/tips/</guid>
+				<guid>https://shaikhshahid.com/tags/tips/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Mysql</title>
-				<link>http://localhost:1313/tags/mysql/</link>
+				<link>https://shaikhshahid.com/tags/mysql/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:1313/tags/mysql/</guid>
+				<guid>https://shaikhshahid.com/tags/mysql/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Performance</title>
-				<link>http://localhost:1313/tags/performance/</link>
+				<link>https://shaikhshahid.com/tags/performance/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:1313/tags/performance/</guid>
+				<guid>https://shaikhshahid.com/tags/performance/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Redis</title>
-				<link>http://localhost:1313/tags/redis/</link>
+				<link>https://shaikhshahid.com/tags/redis/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:1313/tags/redis/</guid>
+				<guid>https://shaikhshahid.com/tags/redis/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Gpt</title>
-				<link>http://localhost:1313/tags/gpt/</link>
+				<link>https://shaikhshahid.com/tags/gpt/</link>
 				<pubDate>Sat, 31 Dec 2022 11:58:04 +0530</pubDate>
-				<guid>http://localhost:1313/tags/gpt/</guid>
+				<guid>https://shaikhshahid.com/tags/gpt/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Golang</title>
-				<link>http://localhost:1313/tags/golang/</link>
+				<link>https://shaikhshahid.com/tags/golang/</link>
 				<pubDate>Tue, 22 Feb 2022 11:56:57 +0530</pubDate>
-				<guid>http://localhost:1313/tags/golang/</guid>
+				<guid>https://shaikhshahid.com/tags/golang/</guid>
 				<description></description>
 			</item>
 	</channel>

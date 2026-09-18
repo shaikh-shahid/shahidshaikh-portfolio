@@ -1,0 +1,110 @@
+{{ define "main" }}
+{{ $pages := where .Data.Pages "Type" "blog" }}
+{{ $paginator := .Paginate $pages 10 }}
+{{ $tags := slice }}
+{{ range $pages }}
+  {{ range .Params.tags }}
+    {{ $tags = $tags | append . }}
+  {{ end }}
+{{ end }}
+{{ $tags = uniq $tags | sort }}
+
+<main class="writing-page">
+  <header class="writing-header">
+    <h1 class="page-title">Writing</h1>
+    <p>Technical notes on distributed systems, AI agents, databases, and practical engineering.</p>
+  </header>
+
+  <section class="writing-tools" aria-label="Filter articles">
+    <label class="writing-search">
+      <span>Search articles</span>
+      <input id="writingSearch" type="search" placeholder="Search by title, tag, or summary">
+    </label>
+    {{ if gt (len $tags) 0 }}
+    <div class="writing-tags" id="writingTags">
+      <button class="writing-tag active" type="button" data-tag="">All</button>
+      {{ range $tags }}
+      <button class="writing-tag" type="button" data-tag="{{ . | urlize }}">{{ . }}</button>
+      {{ end }}
+    </div>
+    {{ end }}
+  </section>
+
+  <ul class="writing-list" id="writingList">
+    {{- range $paginator.Pages -}}
+      {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+      {{ $tagList := slice }}
+      {{ range .Params.tags }}{{ $tagList = $tagList | append (. | urlize) }}{{ end }}
+      <li class="writing-item" data-title="{{ .Title | lower }}" data-summary="{{ with .Description }}{{ . | lower }}{{ else }}{{ .Summary | plainify | lower }}{{ end }}" data-tags="{{ delimit $tagList " " }}">
+        <article>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <div class="writing-meta">
+            <span>{{ dateFormat ":date_medium" .Date }}</span>
+            {{ if .Draft }}<span class="draft-label">DRAFT</span>{{ end }}
+          </div>
+          {{ with .Description }}
+          <p>{{ . }}</p>
+          {{ else }}
+          <p>{{ .Summary | plainify | truncate 180 }}</p>
+          {{ end }}
+          {{ with .Params.tags }}
+          <div class="writing-item-tags">
+            {{ range . }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </article>
+      </li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+
+  <p class="writing-empty" id="writingEmpty" hidden>No articles match that search.</p>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="writing-pagination" aria-label="Writing pages">
+    {{ with $paginator.Prev }}<a href="{{ .URL }}">← Newer</a>{{ end }}
+    <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+    {{ with $paginator.Next }}<a href="{{ .URL }}">Older →</a>{{ end }}
+  </nav>
+  {{ end }}
+</main>
+
+<script>
+  (() => {
+    const search = document.querySelector("#writingSearch");
+    const tagButtons = [...document.querySelectorAll("[data-tag]")];
+    const items = [...document.querySelectorAll(".writing-item")];
+    const empty = document.querySelector("#writingEmpty");
+    let activeTag = "";
+
+    function applyFilters() {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      for (const item of items) {
+        const haystack = [
+          item.dataset.title || "",
+          item.dataset.summary || "",
+          item.dataset.tags || "",
+        ].join(" ");
+        const matchesQuery = !query || haystack.includes(query);
+        const matchesTag = !activeTag || (item.dataset.tags || "").split(" ").includes(activeTag);
+        const show = matchesQuery && matchesTag;
+        item.hidden = !show;
+        if (show) visible += 1;
+      }
+      empty.hidden = visible !== 0;
+    }
+
+    search.addEventListener("input", applyFilters);
+    for (const button of tagButtons) {
+      button.addEventListener("click", () => {
+        activeTag = button.dataset.tag;
+        for (const current of tagButtons) current.classList.toggle("active", current === button);
+        applyFilters();
+      });
+    }
+  })();
+</script>
+{{ end }}

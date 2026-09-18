@@ -1,12 +1,12 @@
 baseURL = "https://shaikhshahid.com/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Shahid Shaikh"
 theme = "archie"
 
 [params]
   author = "Shahid Shaikh"
-  description = "Software Architect | Artificial Intelligence | Distributed Systems"
-  subtitle = "Software engineering and personal blog. Writing about distributed systems, AI, and backend engineering."
+  description = "Principal Software Architect building backend systems, databases, and AI tooling."
+  subtitle = "Writing about distributed systems, AI agents, databases, and production engineering."
   mode = "toggle"
   useCDN = true
   mainSections = ["blog"]
@@ -17,29 +17,99 @@ theme = "archie"
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
 
+  [[params.heroActions]]
+    label = "View projects"
+    url = "/projects/"
+    style = "primary"
+
+  [[params.heroActions]]
+    label = "Read articles"
+    url = "/blog/"
+    style = "secondary"
+
+  [[params.featuredWork]]
+    title = "Redistill"
+    tag = "Featured project"
+    description = "Redis-compatible key-value infrastructure for latency-sensitive production workloads."
+    url = "https://github.com/redistill-io/redistill"
+    action = "View GitHub"
+    secondaryLabel = "See projects"
+    secondaryURL = "/projects/"
+    details = [
+      "Protocol-compatible direction for Redis-style workloads",
+      "Focused on predictable latency and production ergonomics",
+      "Designed as infrastructure, not a toy database"
+    ]
+
+  [[params.featuredWork]]
+    title = "MemX"
+    tag = "AI tooling"
+    description = "A local-first AI memory layer for engineers working across Claude, Cursor, ChatGPT, and other agents."
+    url = "https://github.com/shaikh-shahid/memx"
+    action = "View repo"
+    secondaryLabel = "Read write-up"
+    secondaryURL = "/blog/memx-local-first-ai-memory-layer/"
+    details = [
+      "SQLite-backed local memory with summarized facts",
+      "Ollama-powered extraction and retrieval flow",
+      "MCP integration for agent workflows"
+    ]
+
+  [[params.writingTopics]]
+    title = "Distributed systems"
+    description = "Databases, caching, backend architecture, performance, and reliability."
+    url = "/tags/redis/"
+
+  [[params.writingTopics]]
+    title = "AI agents"
+    description = "Agentic systems, local-first memory, CLI interfaces, and practical LLM tooling."
+    url = "/tags/artificial-intelligence/"
+
+  [[params.writingTopics]]
+    title = "Developer tools"
+    description = "Command-line products, API ergonomics, automation, and engineering workflows."
+    url = "/blog/building-cli-for-ai-agents/"
+
   [[params.highlights]]
     title = "Redistill"
     tag = "Building"
     description = "Extremely fast Redis-compatible key-value database focused on low-latency, production workloads."
     url = "https://github.com/redistill-io/redistill"
+    action = "View repo"
 
   [[params.highlights]]
     title = "Applied AI & Agents"
     tag = "Research"
     description = "Exploring agents, LLM-powered tooling, and applied AI systems for real-world products."
     url = "/papershelf/"
+    action = "Read notes"
+
+  [[params.featuredWriting]]
+    title = "Building CLI for AI Agents"
+    description = "Why CLIs are becoming the integration layer for AI agents, automation, and developer tools."
+    url = "/blog/building-cli-for-ai-agents/"
+
+  [[params.featuredWriting]]
+    title = "MemX - Local First AI Memory Layer"
+    description = "A local-first memory layer for AI tools using SQLite, Ollama, and MCP."
+    url = "/blog/memx-local-first-ai-memory-layer/"
+
+  [[params.featuredWriting]]
+    title = "What the Heck Is Agentic AI Anyway"
+    description = "A practical explanation of agents, tools, memory, planning, and where the hype starts."
+    url = "/blog/what-the-heck-is-agentic-ai-anyway/"
 
 [permalinks]
   blog = "/blog/:slug/"
 
 [[menu.main]]
-  name = "About"
-  url = "/about/"
+  name = "Writing"
+  url = "/blog/"
   weight = 1
 
 [[menu.main]]
-  name = "Blog"
-  url = "/blog/"
+  name = "Projects"
+  url = "/projects/"
   weight = 2
 
 [[menu.main]]
@@ -48,13 +118,13 @@ theme = "archie"
   weight = 3
 
 [[menu.main]]
-  name = "Projects"
-  url = "/projects/"
+  name = "Papershelf"
+  url = "/papershelf/"
   weight = 4
 
 [[menu.main]]
-  name = "Papershelf"
-  url = "/papershelf/"
+  name = "About"
+  url = "/about/"
   weight = 5
 
 [[menu.main]]

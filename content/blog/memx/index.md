@@ -2,7 +2,9 @@
 date = '2026-03-07T21:55:15+05:30'
 draft = false
 title = 'MemX - Local First AI Memory Layer'
+description = 'A local-first AI memory layer for engineers working across Claude, Cursor, ChatGPT, and other AI tools.'
 tags = ['artificial-intelligence']
+images = ['blog/memx-local-first-ai-memory-layer/save-memory-claude.png']
 +++
 MemX is a **NoBS local first AI memory layer** built for engineers and builders working with different tools like Claude, Cursor, ChatGPT and other.
 
@@ -73,7 +75,7 @@ In Claude Desktop, you can add the following to your config.json:
 {
   "mcpServers": {
     "memx": {
-      "command": "<path>/memx/venv/bin/memx-server"
+      "command": "path/to/memx/venv/bin/memx-server"
     }
   }
 }
@@ -84,7 +86,7 @@ In Cursor, you can add the following to your mcp.json:
 {
   "mcpServers": {
     "memx": {
-      "command": "<path>/memx/venv/bin/memx-server"
+      "command": "path/to/memx/venv/bin/memx-server"
     }
   }
 }
@@ -95,12 +97,12 @@ In Windsurf, you can add the following to your mcp_config.json:
 {
   "mcpServers": {
     "memx": {
-      "command": "<path>/memx/venv/bin/memx-server"
+      "command": "path/to/memx/venv/bin/memx-server"
     }
   }
 }
 ```
-Replace the <path> with your system absolute path. You can use `pwd` command to get the path.
+Replace `path/to/memx` with your system absolute path. You can use `pwd` command to get the path.
 
 Refer the [MCP Client Configuration](https://github.com/shaikh-shahid/memex?tab=readme-ov-file#6-mcp-app-setup) for more details.
 

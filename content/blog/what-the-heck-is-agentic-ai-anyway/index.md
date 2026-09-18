@@ -2,7 +2,9 @@
 date = '2025-08-08T11:55:00+05:30'
 draft = false
 title = 'What the Heck Is Agentic Ai Anyway'
+description = 'A practical explanation of agentic AI, tools, memory, planning, and where the hype starts.'
 tags = ['artificial-intelligence','agents']
+images = ['blog/what-the-heck-is-agentic-ai-anyway/brain-hand.webp']
 aliases = ["/blog/what-the-heck-is-agentic-ai-anyway/400/"]
 +++
 ## The Simple Answer

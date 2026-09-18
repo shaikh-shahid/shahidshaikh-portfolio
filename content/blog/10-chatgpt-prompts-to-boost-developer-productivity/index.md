@@ -15,7 +15,7 @@ In this article, we'll explore 10 ChatGPT prompts tailored specifically for deve
 
 Here is the sample prompt:
 
-**"I have a code that needs refactoring. Can you provide suggestions to improve its readability and efficiency? Here is the code: <paste or write code here>"**
+**"I have a code that needs refactoring. Can you provide suggestions to improve its readability and efficiency? Here is the code: `paste or write code here`"**
 
 Use ChatGPT to generate recommendations for refactoring code snippets, such as identifying redundant lines, suggesting better variable names, or proposing alternative algorithms to optimize performance.
 

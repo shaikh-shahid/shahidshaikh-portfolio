@@ -2,6 +2,7 @@
 date = '2026-06-15T14:06:49+05:30'
 draft = false
 title = 'Building CLI for AI Agents'
+description = 'Why CLIs are becoming the integration layer for AI agents, automation, and developer tools.'
 +++
 > 1990: Let's build a CLI 2026: Let's build a CLI
 

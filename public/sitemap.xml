@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://shaikhshahid.com/blog/</loc>
     <lastmod>2026-06-15T14:06:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/building-cli-for-ai-agents/</loc>
+    <loc>https://shaikhshahid.com/blog/building-cli-for-ai-agents/</loc>
     <lastmod>2026-06-15T14:06:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://shaikhshahid.com/</loc>
     <lastmod>2026-06-15T14:06:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/artificial-intelligence/</loc>
+    <loc>https://shaikhshahid.com/tags/artificial-intelligence/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/memx-local-first-ai-memory-layer/</loc>
+    <loc>https://shaikhshahid.com/blog/memx-local-first-ai-memory-layer/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://shaikhshahid.com/tags/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/agents/</loc>
+    <loc>https://shaikhshahid.com/tags/agents/</loc>
     <lastmod>2025-08-08T11:55:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/what-the-heck-is-agentic-ai-anyway/</loc>
+    <loc>https://shaikhshahid.com/blog/what-the-heck-is-agentic-ai-anyway/</loc>
     <lastmod>2025-08-08T11:55:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/10-chatgpt-prompts-to-boost-developer-productivity/</loc>
+    <loc>https://shaikhshahid.com/blog/10-chatgpt-prompts-to-boost-developer-productivity/</loc>
     <lastmod>2025-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
+    <loc>https://shaikhshahid.com/tags/aws/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/firehose/</loc>
+    <loc>https://shaikhshahid.com/tags/firehose/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</loc>
+    <loc>https://shaikhshahid.com/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/getting-started-with-gemini-flash-model/</loc>
+    <loc>https://shaikhshahid.com/blog/getting-started-with-gemini-flash-model/</loc>
     <lastmod>2024-05-21T11:55:53+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/email-spam-detection-model-in-python/</loc>
+    <loc>https://shaikhshahid.com/blog/email-spam-detection-model-in-python/</loc>
     <lastmod>2023-08-18T11:56:38+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/machine-learning/</loc>
+    <loc>https://shaikhshahid.com/tags/machine-learning/</loc>
     <lastmod>2023-08-18T11:56:38+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://shaikhshahid.com/about/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/books/</loc>
+    <loc>https://shaikhshahid.com/books/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://shaikhshahid.com/contact/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/papershelf/</loc>
+    <loc>https://shaikhshahid.com/papershelf/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/privacy-policy/</loc>
+    <loc>https://shaikhshahid.com/privacy-policy/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://shaikhshahid.com/projects/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
+    <loc>https://shaikhshahid.com/tags/sql/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</loc>
+    <loc>https://shaikhshahid.com/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tips/</loc>
+    <loc>https://shaikhshahid.com/tags/tips/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql/</loc>
+    <loc>https://shaikhshahid.com/tags/mysql/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/mysql-query-caching-with-redis/</loc>
+    <loc>https://shaikhshahid.com/blog/mysql-query-caching-with-redis/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/performance/</loc>
+    <loc>https://shaikhshahid.com/tags/performance/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redis/</loc>
+    <loc>https://shaikhshahid.com/tags/redis/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/getting-started-with-chatgpt/</loc>
+    <loc>https://shaikhshahid.com/blog/getting-started-with-chatgpt/</loc>
     <lastmod>2022-12-31T11:58:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gpt/</loc>
+    <loc>https://shaikhshahid.com/tags/gpt/</loc>
     <lastmod>2022-12-31T11:58:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/api-in-go-using-gin-framework/</loc>
+    <loc>https://shaikhshahid.com/blog/api-in-go-using-gin-framework/</loc>
     <lastmod>2022-02-22T11:56:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>https://shaikhshahid.com/tags/golang/</loc>
     <lastmod>2022-02-22T11:56:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://shaikhshahid.com/categories/</loc>
   </url>
 </urlset>

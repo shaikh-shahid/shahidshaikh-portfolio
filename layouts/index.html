@@ -12,6 +12,18 @@
 						<div class="home-intro-body">
 							{{ .Content }}
 						</div>
+						{{- with .Site.Params.heroActions }}
+						<div class="home-actions">
+							{{- range . }}
+							<a class="home-action home-action-{{ default "secondary" .style }}" href="{{ .url }}">{{ .label }}</a>
+							{{- end }}
+						</div>
+						{{- end }}
+						<ul class="home-proof">
+							<li>Principal Software Architect</li>
+							<li>Author of 4 technical books</li>
+							<li>Building databases, AI tools, and developer systems</li>
+						</ul>
 						{{- with .Site.Params.Social }}
 						<div class="home-socials">
 							{{- range . }}
@@ -30,21 +42,67 @@
 					<div class="home-intro-photo">
 						<figure class="home-photo">
 							<img src="{{ "images/shahid-speaking.jpeg" | relURL }}" alt="Shahid speaking at a conference">
+							<figcaption>Speaker on distributed systems, developer tooling, and applied AI.</figcaption>
 						</figure>
 					</div>
 				</section>
 
-				{{ with .Site.Params.highlights }}
-				<section class="home-current">
-					<h2 class="home-section-title">Currently working on</h2>
-					<div class="home-current-grid">
+				{{ with .Site.Params.featuredWork }}
+				<section class="home-featured-work">
+					<div class="home-section-kicker">Selected proof</div>
+					<h2 class="home-section-title">Featured work</h2>
+					<div class="home-featured-work-grid">
 						{{ range . }}
-						<article class="home-current-card">
-							<div class="home-current-tag">{{ .tag }}</div>
-							<h3 class="home-current-title">
-								<a href="{{ .url }}">{{ .title }}</a>
-							</h3>
-							<p class="home-current-description">{{ .description }}</p>
+							<article class="home-work-card">
+								<div class="home-work-tag">{{ .tag }}</div>
+								<h3 class="home-work-title">
+									<a href="{{ .url }}">{{ .title }}</a>
+								</h3>
+								<p class="home-work-description">{{ .description }}</p>
+								{{ with .details }}
+								<ul class="home-work-details">
+									{{ range . }}
+									<li>{{ . }}</li>
+									{{ end }}
+								</ul>
+								{{ end }}
+								<div class="home-work-actions">
+									<a class="home-card-action" href="{{ .url }}">{{ default "Open" .action }} ⟶</a>
+									{{ if and .secondaryURL .secondaryLabel }}
+									<a class="home-card-action home-card-action-muted" href="{{ .secondaryURL }}">{{ .secondaryLabel }} ⟶</a>
+									{{ end }}
+								</div>
+							</article>
+						{{ end }}
+					</div>
+				</section>
+				{{ end }}
+
+				{{ with .Site.Params.writingTopics }}
+				<section class="home-topics">
+					<div class="home-section-kicker">What I write about</div>
+					<div class="home-topic-grid">
+						{{ range . }}
+						<a class="home-topic" href="{{ .url }}">
+							<span>{{ .title }}</span>
+							<p>{{ .description }}</p>
+						</a>
+						{{ end }}
+					</div>
+				</section>
+				{{ end }}
+
+				{{ with .Site.Params.featuredWriting }}
+				<section class="home-featured-writing">
+					<div class="home-section-header">
+						<h2 class="home-section-title">Start here</h2>
+						<a class="home-all-posts-inline" href="{{ "/blog/" | relURL }}">All writing ⟶</a>
+					</div>
+					<div class="home-writing-grid">
+						{{ range . }}
+						<article class="home-writing-card">
+							<h3 class="home-writing-title"><a href="{{ .url }}">{{ .title }}</a></h3>
+							<p>{{ .description }}</p>
 						</article>
 						{{ end }}
 					</div>
@@ -53,11 +111,11 @@
 
 				<section class="home-posts">
 					<div class="home-section-header">
-						<h2 class="home-section-title">Recent blog posts</h2>
+						<h2 class="home-section-title">Latest notes</h2>
 						<a class="home-all-posts-inline" href="{{ "/blog/" | relURL }}">Full archive ⟶</a>
 					</div>
 					{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-					{{ $visible := first 10 (where $pages "Params.hidden" "ne" true) }}
+					{{ $visible := first 5 (where $pages "Params.hidden" "ne" true) }}
 					<ul class="posts">
 					{{ range $visible }}
 						<li class="post">
