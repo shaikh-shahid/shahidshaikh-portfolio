@@ -5,6 +5,8 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT, "content");
 const BLOG_DIR = path.join(ROOT, "content", "blog");
+const MANAGER_ASSET_DIR = path.join(ROOT, "static", "manager");
+const UPLOAD_DIR = path.join(ROOT, "static", "images", "uploads");
 const PORT = Number(process.env.SITE_MANAGER_PORT || 4321);
 
 function escapeToml(value) {
@@ -135,6 +137,22 @@ function sanitizeImageName(input) {
 
 function imagePathFor(fileName) {
   return path.join("static", "images", "uploads", sanitizeImageName(fileName));
+}
+
+function managerAssetPath(requestPath) {
+  const fileName = path.basename(String(requestPath || ""));
+  if (!/^toastui-editor\.(js|css)$/.test(fileName)) return null;
+  return path.join(MANAGER_ASSET_DIR, fileName);
+}
+
+function managerImagePath(requestPath) {
+  const prefix = "/images/uploads/";
+  const value = String(requestPath || "");
+  if (!value.startsWith(prefix)) return null;
+
+  const fileName = value.slice(prefix.length);
+  if (!/^[a-z0-9][a-z0-9-]*\.(png|jpg|jpeg|gif|webp)$/.test(fileName)) return null;
+  return path.join(UPLOAD_DIR, fileName);
 }
 
 async function saveImage(payload) {
@@ -315,8 +333,8 @@ function page() {
     .editor-tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
     .editor-panel { display: none; padding-top: 0.8rem; }
     .editor-panel.active { display: block; }
-    .wysiwyg-editor { min-height: 52vh; }
-    .preview-pane { min-height: 52vh; overflow: auto; border: 1px solid var(--line); border-radius: 8px; padding: 1rem; background: #fff; }
+    .wysiwyg-editor { min-height: 0; }
+    .preview-pane { min-height: 430px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; padding: 1rem; background: #fff; }
     .preview-pane pre { overflow: auto; padding: 0.7rem; background: #202124; color: #f6f6f6; border-radius: 6px; }
     .preview-pane img { max-width: 100%; }
     .advanced-fields { border: 1px solid var(--line); border-radius: 8px; padding: 0.65rem 0.8rem; }
@@ -508,7 +526,7 @@ function page() {
       if (window.toastui && window.toastui.Editor) {
         editorInstance = new window.toastui.Editor({
           el: editorHost,
-          height: "52vh",
+          height: "430px",
           initialEditType: "wysiwyg",
           previewStyle: "tab",
           usageStatistics: false,
@@ -565,6 +583,44 @@ function page() {
 async function handler(request, response) {
   try {
     const url = new URL(request.url, `http://${request.headers.host}`);
+    if (request.method === "GET" && url.pathname.startsWith("/images/uploads/")) {
+      const filePath = managerImagePath(url.pathname);
+      if (!filePath) {
+        json(response, 404, { error: "Not found" });
+        return;
+      }
+      try {
+        const content = await fs.readFile(filePath);
+        const contentType = {
+          ".gif": "image/gif",
+          ".jpeg": "image/jpeg",
+          ".jpg": "image/jpeg",
+          ".png": "image/png",
+          ".webp": "image/webp",
+        }[path.extname(filePath).toLowerCase()];
+        response.writeHead(200, { "content-type": contentType, "cache-control": "no-cache" });
+        response.end(content);
+      } catch {
+        json(response, 404, { error: "Not found" });
+      }
+      return;
+    }
+    if (request.method === "GET" && url.pathname.startsWith("/manager/")) {
+      const filePath = managerAssetPath(url.pathname);
+      if (!filePath) {
+        json(response, 404, { error: "Not found" });
+        return;
+      }
+      try {
+        const content = await fs.readFile(filePath);
+        const contentType = filePath.endsWith(".css") ? "text/css; charset=utf-8" : "text/javascript; charset=utf-8";
+        response.writeHead(200, { "content-type": contentType, "cache-control": "no-cache" });
+        response.end(content);
+      } catch {
+        json(response, 404, { error: "Not found" });
+      }
+      return;
+    }
     if (request.method === "GET" && url.pathname === "/") {
       response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
       response.end(page());
@@ -611,6 +667,8 @@ module.exports = {
   contentFileFor,
   groupContent,
   imagePathFor,
+  managerAssetPath,
+  managerImagePath,
   parsePost,
   sanitizeImageName,
   serializePost,
