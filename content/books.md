@@ -1,7 +1,23 @@
 ---
 title: "Books and Publications"
-description: "Books and publications authored by Shaikh Shahid"
+description: "Browse four technical books authored by Shahid Shaikh on blockchain applications, Azure Cosmos DB, RethinkDB, and Sails.js development."
 date: '2023-06-10T11:56:14+05:30'
+books:
+  - title: "Building Decentralized Blockchain Applications (2nd Edition)"
+    publisher: "BPB Publications"
+    url: "https://www.amazon.in/Building-Decentralized-Blockchain-Applications-blockchain-ebook/dp/B0DVGRLCY1/"
+  - title: "Learning Azure Cosmos DB"
+    publisher: "Packt Publishing"
+    isbn: "9781788476178"
+    url: "https://www.amazon.in/gp/product/1788476174/"
+  - title: "Mastering RethinkDB"
+    publisher: "Packt Publishing"
+    isbn: "9781786461077"
+    url: "https://www.amazon.in/Mastering-RethinkDB-Shahid-Shaikh/dp/1786461072/"
+  - title: "Sails.js Essentials"
+    publisher: "Packt Publishing"
+    isbn: "9781783554536"
+    url: "https://www.amazon.in/Sails-js-Essentials-Shaikh-Shahid/dp/1783554533/"
 ---
 
 ## Books and Publications

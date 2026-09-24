@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "About Shaikh Shahid"
+description: "Meet Shahid Shaikh, a Principal Software Architect working on distributed systems, databases, AI tooling, and production engineering."
 date: '2023-06-10T11:56:14+05:30'
 ---
 

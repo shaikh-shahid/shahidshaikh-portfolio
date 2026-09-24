@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51164&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Redistill: A Faster Redis-Compatible Database - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How Shahid Shaikh built Redistill, a Redis-compatible in-memory database that reached 9.07M operations per second in published benchmarks." />
+	<link rel="canonical" href="http://localhost:51164/projects/redistill/" />
+	<meta property="og:url" content="http://localhost:51164/projects/redistill/" />
+	<meta property="og:site_name" content="Shahid Shaikh" />
+	<meta property="og:title" content="Redistill: A Faster Redis-Compatible Database" />
+	<meta property="og:description" content="How Shahid Shaikh built Redistill, a Redis-compatible in-memory database that reached 9.07M operations per second in published benchmarks." />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="" />
+	<meta property="og:image" content="http://localhost:51164/images/shahid-speaking.jpeg" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="853" />
+	<meta property="og:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Redistill: A Faster Redis-Compatible Database" />
+	<meta name="twitter:description" content="How Shahid Shaikh built Redistill, a Redis-compatible in-memory database that reached 9.07M operations per second in published benchmarks." />
+	<meta name="twitter:image" content="http://localhost:51164/images/shahid-speaking.jpeg" />
+	<meta name="twitter:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	
+        <link rel="stylesheet" href="/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="/css/custom-home.efe724a3461ad4ecb3987c462e30bc7e9c640214bcf282b8c2afea0643922c9c.css">
+		</head>
+<body>
+        <div class="content"><header>
+  <div class="main">
+    <a href="http://localhost:51164/">Shahid Shaikh</a>
+  </div>
+  <div class="site-navigation">
+    <button class="navigation-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu</button>
+    <nav id="primary-navigation" aria-label="Primary navigation">
+      
+      <a href="/blog/">Writing</a>
+      
+      <a href="/projects/">Projects</a>
+      
+      <a href="/books/">Books</a>
+      
+      <a href="/papershelf/">Papershelf</a>
+      
+      <a href="/about/">About</a>
+      
+      <a href="/contact/">Contact</a>
+      
+      <a href="https://tinyurl.com/yc4fct5h">Resume</a>
+      
+      <button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+      <script src="http://localhost:51164/js/themetoggle.js"></script>
+      
+    </nav>
+  </div>
+  <script src="http://localhost:51164/js/navigation.js" defer></script>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Redistill: A Faster Redis-Compatible Database</h1>
+          <div class="meta">Posted on Sep 21, 2026</div>
+        </div>
+        
+        <section class="body">
+          <p>Redistill is an in-memory key-value database built for cache-heavy workloads. It speaks the Redis protocol, so existing Redis clients can connect without an adapter.</p>
+<p><strong>Designed and built entirely by Shahid Shaikh.</strong> I worked on the storage engine, protocol support, persistence, security controls, packaging, documentation, and benchmarks.</p>
+<p><a href="https://redistill.org/">Website</a> · <a href="https://github.com/redistill-io/redistill">Source</a> · <a href="https://redistill.org/benchmarks.html">Benchmarks</a></p>
+<h2 id="why-i-built-it">Why I built it</h2>
+<p>Redis often sits in the hottest part of a system: sessions, API caches, counters, and rate limits. Once that workload grows, a single-threaded server can become the limit.</p>
+<p>I wanted to see what a Redis-compatible cache could do if it was designed around modern multi-core machines from the start. Redistill focuses on that use case instead of trying to copy every Redis feature.</p>
+<h2 id="architecture-and-engineering-decisions">Architecture and engineering decisions</h2>
+<p>Redistill is written in Rust and runs on Tokio. The store is split into thousands of shards using DashMap, which reduces contention and allows unrelated keys to be handled in parallel. The network path uses pipelining, batched I/O, and low-copy buffers to keep per-command overhead down.</p>
+<p>It supports RESP and works with clients such as <code>redis-cli</code>, redis-py, ioredis, and go-redis. Core strings, hashes, TTLs, scanning, authentication, health checks, and server statistics are included.</p>
+<p>Persistence is optional. RDB snapshots and append-only files are available, but the fastest cache configuration keeps persistence disabled.</p>
+<h2 id="results">Results</h2>
+<p>In the published benchmark, Redistill reached <strong>9.07M operations per second</strong> on one <strong>AWS c7i.16xlarge</strong> instance. That was 4.5× Redis and 1.7× Dragonfly in the same test. Median latency was 0.479 ms and p99 latency was 1.215 ms.</p>
+<p>The test used <code>memtier_benchmark</code>, 160 connections, a pipeline depth of 30, 256-byte values, and an even mix of reads and writes. It ran for 60 seconds with persistence disabled for all three databases. Raw results are included in the repository.</p>
+<p>These numbers describe that workload, not every workload. Value size, command mix, persistence, and client behavior can change the result substantially.</p>
+<h2 id="production-features">Production features</h2>
+<p>Redistill includes TLS, password authentication, memory limits, eviction policies, connection controls, health endpoints, <code>INFO</code> statistics, and graceful shutdown. It can be installed through Docker, Homebrew, binaries, or source.</p>
+<h2 id="when-redis-remains-the-better-fit">When Redis remains the better fit</h2>
+<p>Use Redis when you need native replication, clustering, or the full Redis data-type surface—lists, sets, sorted sets, streams, and pub/sub. Redistill is narrower by design. Horizontal scaling currently relies on client-side sharding or a proxy.</p>
+<p><a href="https://redistill.org/docs/quickstart.html">Try Redistill</a></p>
+
+        </section>
+        <div class="post-tags">
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#linkedin" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#youtube" />
+    </svg></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

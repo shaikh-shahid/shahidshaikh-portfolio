@@ -1,0 +1,56 @@
+{{- $author := dict "@type" "Person" "name" .Site.Params.author "url" .Site.Home.Permalink -}}
+{{- if .IsHome -}}
+  {{- $sameAs := slice -}}
+  {{- range .Site.Params.Social -}}
+    {{- $sameAs = $sameAs | append .url -}}
+  {{- end -}}
+  {{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "Person"
+    "name" .Site.Params.author
+    "url" .Permalink
+    "image" (.Site.Params.og_image | absURL)
+    "jobTitle" .Site.Params.jobTitle
+    "description" .Site.Params.description
+    "sameAs" $sameAs
+  -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- else if and .IsPage (eq .Section "blog") -}}
+  {{- $description := (.Description | default (.Summary | plainify)) | plainify | htmlUnescape | truncate 200 -}}
+  {{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" .Title
+    "description" $description
+    "url" .Permalink
+    "mainEntityOfPage" .Permalink
+    "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "author" $author
+    "image" (.Params.image | default .Site.Params.og_image | absURL)
+  -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- else if and .IsPage (eq .RelPermalink "/books/") -}}
+  {{- $items := slice -}}
+  {{- range $index, $book := .Params.books -}}
+    {{- $bookSchema := dict
+      "@type" "Book"
+      "name" $book.title
+      "author" $author
+      "publisher" (dict "@type" "Organization" "name" $book.publisher)
+      "url" $book.url
+    -}}
+    {{- with $book.isbn -}}
+      {{- $bookSchema = merge $bookSchema (dict "isbn" .) -}}
+    {{- end -}}
+    {{- $items = $items | append (dict "@type" "ListItem" "position" (add $index 1) "item" $bookSchema) -}}
+  {{- end -}}
+  {{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "ItemList"
+    "name" .Title
+    "numberOfItems" (len $items)
+    "itemListElement" $items
+  -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- end -}}

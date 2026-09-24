@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "Contact information about Shahid"
+description: "Contact Shahid Shaikh to discuss distributed systems, databases, AI tooling, architecture reviews, technical writing, speaking, or collaboration."
 date: '2023-06-10T11:56:14+05:30'
 ---
 ## Let’s talk

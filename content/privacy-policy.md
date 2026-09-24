@@ -1,71 +1,36 @@
 ---
 title: "Privacy policy"
-description: "Privacy policy"
+description: "How this website collects and uses visitor data."
 date: '2023-06-10T11:56:14+05:30'
+lastmod: '2026-09-24T00:00:00+05:30'
 ---
 
-## Who we are
+Last updated: 24 September 2026
 
-### 
+This is a personal website. I collect only the information needed to understand how the site is used and to respond when someone contacts me.
 
-Our website address is https://shaikhshahid.com.
+## Google Analytics
 
-## Comments
+This site uses Google Analytics to measure traffic and improve the content. Google Analytics may collect information such as the pages you visit, how you found the site, your approximate location, browser and device type, and how you interact with the site. It may also use cookies or similar technologies to distinguish one visit from another.
 
-### 
+Google processes this information on my behalf. You can learn more about how Google handles data in [Google's privacy policy](https://policies.google.com/privacy) and [Google's information for sites that use its services](https://policies.google.com/technologies/partner-sites).
 
-When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.
+You can limit analytics tracking by blocking cookies in your browser or using the [Google Analytics opt-out browser add-on](https://tools.google.com/dlpage/gaoptout).
 
-An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.
+## Server logs
 
-## Media
+The company that hosts this site may keep standard server logs for security and reliability. These logs can include your IP address, browser type, requested page, and the date and time of the request.
 
-### 
+## Contact
 
-If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.
+If you email me, I receive the information you choose to send, including your email address. I use it only to reply and keep it only as long as needed for that conversation or for legitimate record-keeping.
 
-## Cookies
+## External links and embedded content
 
-### 
+The site may link to or embed content from other websites. Those services have their own privacy practices, and this policy does not cover them.
 
-If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.
+## Your choices
 
-If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.
+You may ask what personal information I hold about you or ask me to delete it, subject to any legal obligations. Email [hello@shaikhshahid.com](mailto:hello@shaikhshahid.com) with a privacy-related request.
 
-When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select "Remember Me", your login will persist for two weeks. If you log out of your account, the login cookies will be removed.
-
-If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and indicates the post ID of the article you edited. It expires after 1 day.
-
-## Embedded content from other websites
-
-### 
-
-Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.
-
-These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.
-
-## Who do we share your data with
-
-### 
-
-**Suggested text:** If you request a password reset, your IP address will be included in the reset email.
-
-## How long we retain your data
-
-### 
-
-If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.
-
-For users who register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.
-
-## What rights do you have over your data?
-
-### 
-
-If you have an account on this site or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.
-
-## Where is your data sent?
-
-### 
-
-Visitor comments may be checked through an automated spam detection service.
+I may update this policy when the site or the services it uses change. The latest revision date will appear at the top of this page.

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51164&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>MemX: Local Memory for AI Tools - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How Shahid Shaikh built MemX, a local-first memory layer for sharing useful context across Claude, Cursor, and other MCP clients." />
+	<link rel="canonical" href="http://localhost:51164/projects/memx/" />
+	<meta property="og:url" content="http://localhost:51164/projects/memx/" />
+	<meta property="og:site_name" content="Shahid Shaikh" />
+	<meta property="og:title" content="MemX: Local Memory for AI Tools" />
+	<meta property="og:description" content="How Shahid Shaikh built MemX, a local-first memory layer for sharing useful context across Claude, Cursor, and other MCP clients." />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="" />
+	<meta property="og:image" content="http://localhost:51164/images/shahid-speaking.jpeg" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="853" />
+	<meta property="og:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="MemX: Local Memory for AI Tools" />
+	<meta name="twitter:description" content="How Shahid Shaikh built MemX, a local-first memory layer for sharing useful context across Claude, Cursor, and other MCP clients." />
+	<meta name="twitter:image" content="http://localhost:51164/images/shahid-speaking.jpeg" />
+	<meta name="twitter:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	
+        <link rel="stylesheet" href="/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="/css/custom-home.efe724a3461ad4ecb3987c462e30bc7e9c640214bcf282b8c2afea0643922c9c.css">
+		</head>
+<body>
+        <div class="content"><header>
+  <div class="main">
+    <a href="http://localhost:51164/">Shahid Shaikh</a>
+  </div>
+  <div class="site-navigation">
+    <button class="navigation-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu</button>
+    <nav id="primary-navigation" aria-label="Primary navigation">
+      
+      <a href="/blog/">Writing</a>
+      
+      <a href="/projects/">Projects</a>
+      
+      <a href="/books/">Books</a>
+      
+      <a href="/papershelf/">Papershelf</a>
+      
+      <a href="/about/">About</a>
+      
+      <a href="/contact/">Contact</a>
+      
+      <a href="https://tinyurl.com/yc4fct5h">Resume</a>
+      
+      <button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+      <script src="http://localhost:51164/js/themetoggle.js"></script>
+      
+    </nav>
+  </div>
+  <script src="http://localhost:51164/js/navigation.js" defer></script>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">MemX: Local Memory for AI Tools</h1>
+          <div class="meta">Posted on Sep 21, 2026</div>
+        </div>
+        
+        <section class="body">
+          <p>MemX is a local memory layer for people who use more than one AI tool. It saves useful context on your machine and makes it available to Claude, Cursor, Windsurf, and other MCP clients.</p>
+<p><strong>Designed and built entirely by Shahid Shaikh.</strong> I built the storage model, local model pipeline, semantic search, CLI, MCP server, and integrations.</p>
+<p><a href="https://github.com/shaikh-shahid/memx">Source</a> · <a href="/blog/memx-local-first-ai-memory-layer/">Technical article</a></p>
+<h2 id="why-i-built-it">Why I built it</h2>
+<p>My research often started in Claude or ChatGPT and moved to Cursor when it was time to write code. Each move meant copying notes or asking one tool to produce a large handoff prompt for another. Returning to old work had the same problem: the useful decisions were buried in a conversation.</p>
+<p>I tried keeping markdown notes, but I was still doing all the summarising and organising myself. MemX came from wanting one small tool that could store the important parts and retrieve them from whichever AI client I happened to be using.</p>
+<h2 id="local-first-architecture">Local-first architecture</h2>
+<p>MemX uses SQLite as its source of truth and <code>sqlite-vec</code> for vector search. Ollama runs the local models used for embeddings and fact extraction. Long input can be stored as a short summary plus smaller facts, so an agent can retrieve the overview and the supporting detail.</p>
+<p>The Model Context Protocol (MCP) is the integration layer. MemX exposes tools to store, search, list, retrieve, and delete memories. Scopes, tags, and source labels keep unrelated projects separate.</p>
+<p>There is also a CLI for working with the same store directly.</p>
+<h2 id="a-typical-workflow">A typical workflow</h2>
+<p>Research in Claude can be saved under a project scope with <code>mem_store</code>. Later, Cursor can call <code>mem_context</code> with that scope and receive the saved summary and facts. Both tools use the same local database; neither owns the memory.</p>
+<p>This is the main point of MemX: the context belongs to the user, not to one chat window.</p>
+<h2 id="why-these-choices">Why these choices</h2>
+<ul>
+<li>SQLite keeps setup simple and the data portable.</li>
+<li><code>sqlite-vec</code> avoids running a separate vector database.</li>
+<li>Ollama keeps normal processing on the local machine.</li>
+<li>MCP avoids building a custom integration for every AI client.</li>
+<li>Python keeps the CLI, model pipeline, and server in one approachable codebase.</li>
+</ul>
+<h2 id="deliberate-boundaries">Deliberate boundaries</h2>
+<p>MemX is a local developer tool, not a hosted production service. It does not include user authentication, rate limiting, multi-user isolation, centralised logging, or cross-device sync.</p>
+<p>Those features would be necessary for a shared service, but they would also make this tool much heavier. MemX stays focused on one job: carrying useful context between AI tools on a developer’s machine.</p>
+<p><a href="https://github.com/shaikh-shahid/memx">Explore MemX on GitHub</a></p>
+
+        </section>
+        <div class="post-tags">
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#linkedin" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#youtube" />
+    </svg></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

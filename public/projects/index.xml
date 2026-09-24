@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Projects on Shahid Shaikh</title>
+		<link>http://localhost:1313/projects/</link>
+		<description>Recent content in Projects on Shahid Shaikh</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0530</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Redistill: Engineering a Redis-Compatible Database for Single-Instance Performance</title>
+				<link>http://localhost:1313/projects/redistill/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0530</pubDate>
+				<guid>http://localhost:1313/projects/redistill/</guid>
+				<description>&lt;p&gt;Redistill is a high-performance, in-memory key-value database that speaks the Redis protocol. It is designed for teams that use Redis-compatible clients for latency-sensitive caching workloads but want substantially more throughput from each server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Designed and built entirely by Shahid Shaikh&lt;/strong&gt;, Redistill covers the database engine, Redis protocol implementation, persistence, operational controls, packaging, documentation, and performance engineering.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Published throughput:&lt;/strong&gt; 9.07M operations per second on one AWS c7i.16xlarge instance&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Published latency:&lt;/strong&gt; 0.479 ms p50 and 1.215 ms p99&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Relative throughput:&lt;/strong&gt; 4.5× Redis and 1.7× Dragonfly in the documented single-instance benchmark&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Implementation:&lt;/strong&gt; Rust, Tokio, DashMap, sharded storage, zero-copy buffers, and batched I/O&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://redistill.org/&#34;&gt;Visit Redistill&lt;/a&gt; · &lt;a href=&#34;https://github.com/redistill-io/redistill&#34;&gt;View the source&lt;/a&gt; · &lt;a href=&#34;https://redistill.org/benchmarks.html&#34;&gt;Read the benchmark methodology&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

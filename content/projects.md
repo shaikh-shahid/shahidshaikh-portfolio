@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-description: "Projects and experiments by Shaikh Shahid"
+description: "Explore Shahid Shaikh’s projects spanning Redis-compatible infrastructure, AI memory, developer tools, data systems, and applied engineering experiments."
 date: '2023-06-10T11:56:14+05:30'
 ---
 
@@ -8,21 +8,29 @@ Here are a few projects and experiments I’ve worked on. I’ll keep expanding 
 
 ## Featured projects
 
-### [Redistill](https://redistill.org/)
+### [Redistill case study](/projects/redistill/)
 
-An extremely fast Redis-compatible key-value database focused on low-latency production workloads.
+An extremely fast Redis-compatible key-value database focused on low-latency production workloads. In the published single-instance benchmark, it reached 9.07M operations per second with 0.479 ms p50 latency.
 
-**Why it matters:** Redis-compatible systems are often used in the hot path. Redistill explores what it takes to keep that path small, predictable, and fast.
+**My role:** I designed and built the entire system, including the database engine, Redis protocol support, persistence, operational controls, packaging, documentation, and performance work.
+
+**Why it matters:** Redis-compatible systems are often used in the hot path. Redistill demonstrates what a focused, multi-core architecture can achieve while preserving compatibility with existing Redis clients.
 
 **Area:** Databases, distributed systems, performance engineering
 
-### [MemX](https://github.com/shaikh-shahid/memx)
+[Read the case study](/projects/redistill/) · [Visit the website](https://redistill.org/) · [View the source](https://github.com/redistill-io/redistill)
+
+### [MemX case study](/projects/memx/)
 
 A local-first AI memory layer for engineers working across tools like Claude, Cursor, ChatGPT, and other agents.
 
-**Why it matters:** AI tools lose context easily. MemX keeps useful facts and summaries available locally, with SQLite, Ollama, and MCP integration.
+**My role:** I designed and built the entire product, including its storage model, local AI pipeline, semantic retrieval, CLI, MCP server, and agent integrations.
+
+**Why it matters:** AI tools lose context easily. MemX keeps summaries and atomic facts in a local SQLite store, then makes them available across agents through MCP.
 
 **Area:** AI agents, local-first tools, developer experience
+
+[Read the case study](/projects/memx/) · [Read the technical article](/blog/memx-local-first-ai-memory-layer/) · [View the source](https://github.com/shaikh-shahid/memx)
 
 ### [Atlas](https://github.com/shaikh-shahid/Atlas)
 

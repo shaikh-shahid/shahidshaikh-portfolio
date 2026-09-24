@@ -5,10 +5,12 @@ theme = "archie"
 
 [params]
   author = "Shahid Shaikh"
+  googleAnalytics = "G-DDRN4S9DSC"
+  jobTitle = "Principal Software Architect"
   description = "Principal Software Architect building backend systems, databases, and AI tooling."
   subtitle = "Writing about distributed systems, AI agents, databases, and production engineering."
   mode = "toggle"
-  useCDN = true
+  useCDN = false
   mainSections = ["blog"]
   og_image = "images/shahid-speaking.jpeg"
   customCSS = ["css/custom-home.css"]
@@ -31,10 +33,10 @@ theme = "archie"
     title = "Redistill"
     tag = "Featured project"
     description = "Redis-compatible key-value infrastructure for latency-sensitive production workloads."
-    url = "https://github.com/redistill-io/redistill"
-    action = "View GitHub"
-    secondaryLabel = "See projects"
-    secondaryURL = "/projects/"
+    url = "/projects/redistill/"
+    action = "Read case study"
+    secondaryLabel = "Visit Redistill"
+    secondaryURL = "https://redistill.org/"
     details = [
       "Protocol-compatible direction for Redis-style workloads",
       "Focused on predictable latency and production ergonomics",
@@ -45,9 +47,9 @@ theme = "archie"
     title = "MemX"
     tag = "AI tooling"
     description = "A local-first AI memory layer for engineers working across Claude, Cursor, ChatGPT, and other agents."
-    url = "https://github.com/shaikh-shahid/memx"
-    action = "View repo"
-    secondaryLabel = "Read write-up"
+    url = "/projects/memx/"
+    action = "Read case study"
+    secondaryLabel = "Read technical article"
     secondaryURL = "/blog/memx-local-first-ai-memory-layer/"
     details = [
       "SQLite-backed local memory with summarized facts",
@@ -139,20 +141,20 @@ theme = "archie"
 
 [[params.social]]
   name = "X"
-  icon = "simple:twitter"
+  icon = "twitter"
   url = "https://x.com/shahidontech"
 
 [[params.social]]
   name = "LinkedIn"
-  icon = "simple:linkedin"
+  icon = "linkedin"
   url = "https://www.linkedin.com/in/skshahid/"
 
 [[params.social]]
   name = "YouTube"
-  icon = "simple:youtube"
+  icon = "youtube"
   url = "https://www.youtube.com/@shahidontech"
 
 [[params.social]]
   name = "GitHub"
-  icon = "simple:github"
+  icon = "github"
   url = "https://github.com/shaikh-shahid"
