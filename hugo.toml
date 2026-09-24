@@ -136,7 +136,7 @@ theme = "archie"
 
 [[menu.main]]
   name = "Resume"
-  url = "https://tinyurl.com/yc4fct5h"
+  url = "/resume.pdf"
   weight = 7
 
 [[params.social]]

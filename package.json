@@ -1,7 +1,7 @@
 {
   "scripts": {
     "manager": "node scripts/site-manager.js",
-    "test": "node --test scripts/site-manager.test.js scripts/papershelf.test.js scripts/editor-features.test.js scripts/responsive-navigation.test.js scripts/seo-metadata.test.js scripts/project-case-studies.test.js scripts/site-quality.test.js scripts/analytics.test.js"
+    "test": "node --test scripts/site-manager.test.js scripts/papershelf.test.js scripts/editor-features.test.js scripts/responsive-navigation.test.js scripts/seo-metadata.test.js scripts/project-case-studies.test.js scripts/site-quality.test.js scripts/analytics.test.js scripts/release-pages.test.js"
   },
   "dependencies": {
     "@toast-ui/editor": "^3.2.2"
