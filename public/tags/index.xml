@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on Shahid Shaikh</title>
-		<link>http://localhost:57775/tags/</link>
+		<link>http://localhost:61821/tags/</link>
 		<description>Recent content in Tags on Shahid Shaikh</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,110 +12,110 @@
 		
 			<lastBuildDate>Fri, 18 Sep 2026 13:56:17 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:57775/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:61821/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Ai</title>
-				<link>http://localhost:57775/tags/ai/</link>
+				<link>http://localhost:61821/tags/ai/</link>
 				<pubDate>Fri, 18 Sep 2026 13:56:17 +0000</pubDate>
-				<guid>http://localhost:57775/tags/ai/</guid>
+				<guid>http://localhost:61821/tags/ai/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Inference</title>
-				<link>http://localhost:57775/tags/inference/</link>
+				<link>http://localhost:61821/tags/inference/</link>
 				<pubDate>Fri, 18 Sep 2026 13:56:17 +0000</pubDate>
-				<guid>http://localhost:57775/tags/inference/</guid>
+				<guid>http://localhost:61821/tags/inference/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Llm</title>
-				<link>http://localhost:57775/tags/llm/</link>
+				<link>http://localhost:61821/tags/llm/</link>
 				<pubDate>Fri, 18 Sep 2026 13:56:17 +0000</pubDate>
-				<guid>http://localhost:57775/tags/llm/</guid>
+				<guid>http://localhost:61821/tags/llm/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Artificial-Intelligence</title>
-				<link>http://localhost:57775/tags/artificial-intelligence/</link>
+				<link>http://localhost:61821/tags/artificial-intelligence/</link>
 				<pubDate>Sat, 07 Mar 2026 21:55:15 +0530</pubDate>
-				<guid>http://localhost:57775/tags/artificial-intelligence/</guid>
+				<guid>http://localhost:61821/tags/artificial-intelligence/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Agents</title>
-				<link>http://localhost:57775/tags/agents/</link>
+				<link>http://localhost:61821/tags/agents/</link>
 				<pubDate>Fri, 08 Aug 2025 11:55:00 +0530</pubDate>
-				<guid>http://localhost:57775/tags/agents/</guid>
+				<guid>http://localhost:61821/tags/agents/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Aws</title>
-				<link>http://localhost:57775/tags/aws/</link>
+				<link>http://localhost:61821/tags/aws/</link>
 				<pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
-				<guid>http://localhost:57775/tags/aws/</guid>
+				<guid>http://localhost:61821/tags/aws/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Firehose</title>
-				<link>http://localhost:57775/tags/firehose/</link>
+				<link>http://localhost:61821/tags/firehose/</link>
 				<pubDate>Wed, 12 Jun 2024 11:55:34 +0530</pubDate>
-				<guid>http://localhost:57775/tags/firehose/</guid>
+				<guid>http://localhost:61821/tags/firehose/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Machine-Learning</title>
-				<link>http://localhost:57775/tags/machine-learning/</link>
+				<link>http://localhost:61821/tags/machine-learning/</link>
 				<pubDate>Fri, 18 Aug 2023 11:56:38 +0530</pubDate>
-				<guid>http://localhost:57775/tags/machine-learning/</guid>
+				<guid>http://localhost:61821/tags/machine-learning/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Sql</title>
-				<link>http://localhost:57775/tags/sql/</link>
+				<link>http://localhost:61821/tags/sql/</link>
 				<pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
-				<guid>http://localhost:57775/tags/sql/</guid>
+				<guid>http://localhost:61821/tags/sql/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Tips</title>
-				<link>http://localhost:57775/tags/tips/</link>
+				<link>http://localhost:61821/tags/tips/</link>
 				<pubDate>Mon, 09 Jan 2023 11:57:36 +0530</pubDate>
-				<guid>http://localhost:57775/tags/tips/</guid>
+				<guid>http://localhost:61821/tags/tips/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Mysql</title>
-				<link>http://localhost:57775/tags/mysql/</link>
+				<link>http://localhost:61821/tags/mysql/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:57775/tags/mysql/</guid>
+				<guid>http://localhost:61821/tags/mysql/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Performance</title>
-				<link>http://localhost:57775/tags/performance/</link>
+				<link>http://localhost:61821/tags/performance/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:57775/tags/performance/</guid>
+				<guid>http://localhost:61821/tags/performance/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Redis</title>
-				<link>http://localhost:57775/tags/redis/</link>
+				<link>http://localhost:61821/tags/redis/</link>
 				<pubDate>Fri, 06 Jan 2023 11:57:17 +0530</pubDate>
-				<guid>http://localhost:57775/tags/redis/</guid>
+				<guid>http://localhost:61821/tags/redis/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Gpt</title>
-				<link>http://localhost:57775/tags/gpt/</link>
+				<link>http://localhost:61821/tags/gpt/</link>
 				<pubDate>Sat, 31 Dec 2022 11:58:04 +0530</pubDate>
-				<guid>http://localhost:57775/tags/gpt/</guid>
+				<guid>http://localhost:61821/tags/gpt/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Golang</title>
-				<link>http://localhost:57775/tags/golang/</link>
+				<link>http://localhost:61821/tags/golang/</link>
 				<pubDate>Tue, 22 Feb 2022 11:56:57 +0530</pubDate>
-				<guid>http://localhost:57775/tags/golang/</guid>
+				<guid>http://localhost:61821/tags/golang/</guid>
 				<description></description>
 			</item>
 	</channel>

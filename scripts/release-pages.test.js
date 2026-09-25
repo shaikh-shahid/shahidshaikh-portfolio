@@ -29,3 +29,20 @@ test("navigation links to the locally hosted resume", () => {
   assert.match(html, /href="\/resume\.pdf"/);
   assert.equal(resume.subarray(0, 5).toString(), "%PDF-");
 });
+
+test("homepage and individual articles include the Substack signup form", () => {
+  for (const relativePath of [
+    "index.html",
+    path.join("blog", "building-cli-for-ai-agents", "index.html"),
+  ]) {
+    const html = fs.readFileSync(path.join(destination, relativePath), "utf8");
+    const embeds = html.match(/https:\/\/shahidontech\.substack\.com\/embed/g) ?? [];
+
+    assert.equal(embeds.length, 1, `${relativePath} should contain one signup form`);
+    assert.match(html, /title="Subscribe to Shahid's newsletter"/);
+    assert.match(html, /loading="lazy"/);
+  }
+
+  const archive = fs.readFileSync(path.join(destination, "blog", "index.html"), "utf8");
+  assert.doesNotMatch(archive, /shahidontech\.substack\.com\/embed/);
+});

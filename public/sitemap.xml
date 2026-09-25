@@ -2,120 +2,120 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:57775/projects/memx/</loc>
+    <loc>http://localhost:61821/projects/memx/</loc>
     <lastmod>2026-09-21T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/projects/redistill/</loc>
+    <loc>http://localhost:61821/projects/redistill/</loc>
     <lastmod>2026-09-21T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/</loc>
+    <loc>http://localhost:61821/</loc>
     <lastmod>2026-09-24T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/ai/</loc>
+    <loc>http://localhost:61821/tags/ai/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/</loc>
+    <loc>http://localhost:61821/blog/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/inference/</loc>
+    <loc>http://localhost:61821/tags/inference/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/llm/</loc>
+    <loc>http://localhost:61821/tags/llm/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/speculative-decoding/</loc>
+    <loc>http://localhost:61821/blog/speculative-decoding/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/</loc>
+    <loc>http://localhost:61821/tags/</loc>
     <lastmod>2026-09-18T13:56:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/building-cli-for-ai-agents/</loc>
+    <loc>http://localhost:61821/blog/building-cli-for-ai-agents/</loc>
     <lastmod>2026-06-15T14:06:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/artificial-intelligence/</loc>
+    <loc>http://localhost:61821/tags/artificial-intelligence/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/memx-local-first-ai-memory-layer/</loc>
+    <loc>http://localhost:61821/blog/memx-local-first-ai-memory-layer/</loc>
     <lastmod>2026-03-07T21:55:15+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/agents/</loc>
+    <loc>http://localhost:61821/tags/agents/</loc>
     <lastmod>2025-08-08T11:55:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/what-the-heck-is-agentic-ai-anyway/</loc>
+    <loc>http://localhost:61821/blog/what-the-heck-is-agentic-ai-anyway/</loc>
     <lastmod>2025-08-08T11:55:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/10-chatgpt-prompts-to-boost-developer-productivity/</loc>
+    <loc>http://localhost:61821/blog/10-chatgpt-prompts-to-boost-developer-productivity/</loc>
     <lastmod>2025-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/aws/</loc>
+    <loc>http://localhost:61821/tags/aws/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/firehose/</loc>
+    <loc>http://localhost:61821/tags/firehose/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</loc>
+    <loc>http://localhost:61821/blog/pushing-data-to-amazon-kinesis-firehose-using-golang-sdk/</loc>
     <lastmod>2024-06-12T11:55:34+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/getting-started-with-gemini-flash-model/</loc>
+    <loc>http://localhost:61821/blog/getting-started-with-gemini-flash-model/</loc>
     <lastmod>2024-05-21T11:55:53+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/email-spam-detection-model-in-python/</loc>
+    <loc>http://localhost:61821/blog/email-spam-detection-model-in-python/</loc>
     <lastmod>2023-08-18T11:56:38+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/machine-learning/</loc>
+    <loc>http://localhost:61821/tags/machine-learning/</loc>
     <lastmod>2023-08-18T11:56:38+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/about/</loc>
+    <loc>http://localhost:61821/about/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/books/</loc>
+    <loc>http://localhost:61821/books/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/contact/</loc>
+    <loc>http://localhost:61821/contact/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/papershelf/</loc>
+    <loc>http://localhost:61821/papershelf/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/privacy-policy/</loc>
+    <loc>http://localhost:61821/privacy-policy/</loc>
     <lastmod>2026-09-24T00:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/projects/</loc>
+    <loc>http://localhost:61821/projects/</loc>
     <lastmod>2023-06-10T11:56:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/sql/</loc>
+    <loc>http://localhost:61821/tags/sql/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</loc>
+    <loc>http://localhost:61821/blog/sql-query-to-check-if-name-begins-and-ends-with-vowels/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/tips/</loc>
+    <loc>http://localhost:61821/tags/tips/</loc>
     <lastmod>2023-01-09T11:57:36+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/mysql/</loc>
+    <loc>http://localhost:61821/tags/mysql/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/mysql-query-caching-with-redis/</loc>
+    <loc>http://localhost:61821/blog/mysql-query-caching-with-redis/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/performance/</loc>
+    <loc>http://localhost:61821/tags/performance/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/redis/</loc>
+    <loc>http://localhost:61821/tags/redis/</loc>
     <lastmod>2023-01-06T11:57:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/getting-started-with-chatgpt/</loc>
+    <loc>http://localhost:61821/blog/getting-started-with-chatgpt/</loc>
     <lastmod>2022-12-31T11:58:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/gpt/</loc>
+    <loc>http://localhost:61821/tags/gpt/</loc>
     <lastmod>2022-12-31T11:58:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/blog/api-in-go-using-gin-framework/</loc>
+    <loc>http://localhost:61821/blog/api-in-go-using-gin-framework/</loc>
     <lastmod>2022-02-22T11:56:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/tags/golang/</loc>
+    <loc>http://localhost:61821/tags/golang/</loc>
     <lastmod>2022-02-22T11:56:57+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:57775/categories/</loc>
+    <loc>http://localhost:61821/categories/</loc>
   </url>
 </urlset>
