@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Inference on Shahid Shaikh</title>
-		<link>http://localhost:61821/tags/inference/</link>
+		<link>http://localhost:53425/tags/inference/</link>
 		<description>Recent content in Inference on Shahid Shaikh</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,13 +12,13 @@
 		
 			<lastBuildDate>Fri, 18 Sep 2026 13:56:17 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:61821/tags/inference/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:53425/tags/inference/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Speculative Decoding</title>
-				<link>http://localhost:61821/blog/speculative-decoding/</link>
+				<link>http://localhost:53425/blog/speculative-decoding/</link>
 				<pubDate>Fri, 18 Sep 2026 13:56:17 +0000</pubDate>
-				<guid>http://localhost:61821/blog/speculative-decoding/</guid>
-				<description>&lt;p&gt;Speculative decoding is a technique in AI inference optimization where we combine a fast draft model usually smaller in parameter size with the actual large language model to help speed up token generation time.&#xA;It&amp;rsquo;s a very useful and widely adopted technique in inference engineering and optimization. Let&amp;rsquo;s look at how this works and tradeoff one needs to make in order to use speculative decoding in their inference pipeline.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-speculative-decoding-works&#34;&gt;How Speculative Decoding Works&lt;/h2&gt;&#xA;&lt;p&gt;Speculative decoding introduces a small parameter model that can work and generate next token faster than the large LLM model with reasoning capability. The small model is termed as &amp;ldquo;&lt;strong&gt;Draft Model&amp;rdquo;&lt;/strong&gt; in the diagram below. The draft model generates sequence of tokens and passes it to the actual model to evalulate and verify.&#xA;LLM evaluates the tokens and accepts the token which is correct and either replaces or rejects the tokens which are wrong. All of this happens in &lt;strong&gt;one forward pass&lt;/strong&gt; which saves times and improves performance.&#xA;&lt;img src=&#34;http://localhost:61821/images/uploads/screenshot-2026-09-21-at-3-27-44-pm.png&#34; alt=&#34;Screenshot 2026-09-21 at 3.27.44 PM.png&#34;&gt;&#xA;Post verification stage LLM updates the KV cache with the accepted tokens and proceeds to generate more tokens required to process the prompt. This approach increases TPS (token per second) aggresively.&lt;/p&gt;</description>
+				<guid>http://localhost:53425/blog/speculative-decoding/</guid>
+				<description>&lt;p&gt;Speculative decoding is a technique in AI inference optimization where we combine a fast draft model usually smaller in parameter size with the actual large language model to help speed up token generation time.&#xA;It&amp;rsquo;s a very useful and widely adopted technique in inference engineering and optimization. Let&amp;rsquo;s look at how this works and tradeoff one needs to make in order to use speculative decoding in their inference pipeline.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-speculative-decoding-works&#34;&gt;How Speculative Decoding Works&lt;/h2&gt;&#xA;&lt;p&gt;Speculative decoding introduces a small parameter model that can work and generate next token faster than the large LLM model with reasoning capability. The small model is termed as &amp;ldquo;&lt;strong&gt;Draft Model&amp;rdquo;&lt;/strong&gt; in the diagram below. The draft model generates sequence of tokens and passes it to the actual model to evalulate and verify.&#xA;LLM evaluates the tokens and accepts the token which is correct and either replaces or rejects the tokens which are wrong. All of this happens in &lt;strong&gt;one forward pass&lt;/strong&gt; which saves times and improves performance.&#xA;&lt;img src=&#34;http://localhost:53425/images/uploads/screenshot-2026-09-21-at-3-27-44-pm.png&#34; alt=&#34;Screenshot 2026-09-21 at 3.27.44 PM.png&#34;&gt;&#xA;Post verification stage LLM updates the KV cache with the accepted tokens and proceeds to generate more tokens required to process the prompt. This approach increases TPS (token per second) aggresively.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

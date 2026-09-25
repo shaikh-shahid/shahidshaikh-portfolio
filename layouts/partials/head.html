@@ -48,4 +48,10 @@
     </nav>
   </div>
   <script src="{{ absURL "js/navigation.js" }}" defer></script>
+  <noscript><style data-mobile-navigation-fallback>
+    @media screen and (max-width: 768px) {
+      .navigation-menu-button { display: none !important; }
+      .site-navigation > nav { display: flex !important; flex-wrap: wrap; }
+    }
+  </style></noscript>
 </header>

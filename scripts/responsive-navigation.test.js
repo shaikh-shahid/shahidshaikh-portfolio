@@ -24,6 +24,17 @@ test("rendered navigation keeps a normal nav and provides an accessible mobile t
   assert.match(html, /<button[^>]*aria-controls="primary-navigation"[^>]*aria-expanded="false"[^>]*>/);
   assert.match(html, /<nav id="primary-navigation"[^>]*aria-label="Primary navigation"[^>]*>/);
   assert.match(html, /src="https:\/\/shaikhshahid\.com\/js\/navigation\.js"/);
+  assert.match(html, /<noscript>[\s\S]*data-mobile-navigation-fallback/);
+});
+
+test("mobile navigation and code blocks stay within the viewport", () => {
+  const css = fs.readFileSync(path.join(root, "assets", "css", "custom-home.css"), "utf8");
+
+  assert.match(css, /@media screen and \(max-width: 768px\)[\s\S]*?\.navigation-menu-button\s*{[\s\S]*?display:\s*inline-flex/);
+  assert.match(css, /\.site-navigation\s*>\s*nav\s*{[\s\S]*?display:\s*none/);
+  assert.match(css, /\.post-content[\s\S]*?min-inline-size:\s*0/);
+  assert.match(css, /\.highlight[\s\S]*?max-inline-size:\s*100%/);
+  assert.match(css, /pre\s*{[\s\S]*?overflow-x:\s*auto/);
 });
 
 test("homepage introduces Shahid before presenting the speaking photo", () => {

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!navigation || !button) return;
 
-  navigation.classList.add("is-enhanced");
   button.addEventListener("click", () => {
     const isOpen = navigation.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
