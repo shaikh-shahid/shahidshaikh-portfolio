@@ -99,63 +99,39 @@ summary:focus-visible {
 
 .code-block {
   position: relative;
-  overflow: hidden;
-  border-radius: var(--border-radius, 5px);
 }
 
 .code-block pre {
-  margin: 0;
-  padding-block-start: 1rem;
+  padding-block-start: 2.75rem;
 }
 
 .code-copy-button {
   position: absolute;
   z-index: 2;
-  inset-block-start: 0.5rem;
+  inset-block-start: 0.45rem;
   inset-inline-end: 0.5rem;
-  display: inline-flex;
-  min-height: 1.75rem;
-  padding: 0.15rem 0.5rem;
-  align-items: center;
-  gap: 0.3rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 0.3rem;
-  background: rgba(0, 0, 0, 0.32);
-  color: #deded8;
+  min-height: 2rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid rgba(127, 127, 127, 0.45);
+  border-radius: 0.35rem;
+  background: var(--color-background, #fff);
+  color: var(--color-text, #232333);
   cursor: pointer;
   font: inherit;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  transition: opacity 120ms ease, background-color 120ms ease;
-}
-
-.code-copy-button::before {
-  content: "⧉";
-  font-size: 0.85rem;
   line-height: 1;
 }
 
 .code-copy-button:hover,
 .code-copy-button:focus-visible {
-  background: rgba(0, 0, 0, 0.58);
-  color: #fff;
-}
-
-.code-block:hover .code-copy-button,
-.code-block:focus-within .code-copy-button {
-  opacity: 1;
-}
-
-@media (hover: none) {
-  .code-copy-button {
-    opacity: 1;
-  }
+  border-color: var(--color-primary, #dc143c);
+  color: var(--color-primary, #dc143c);
 }
 
 .code-block pre code[class*="language-"]::before {
-  content: none;
+  inset-inline-end: 4.75rem;
+  right: 4.75rem;
 }
 
 .post-content pre {

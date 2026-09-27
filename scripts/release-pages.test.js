@@ -46,3 +46,12 @@ test("homepage and individual articles include the Substack signup form", () => 
   const archive = fs.readFileSync(path.join(destination, "blog", "index.html"), "utf8");
   assert.doesNotMatch(archive, /shahidontech\.substack\.com\/embed/);
 });
+
+test("blog articles load the code-copy enhancement", () => {
+  const html = fs.readFileSync(
+    path.join(destination, "blog", "api-in-go-using-gin-framework", "index.html"),
+    "utf8"
+  );
+
+  assert.match(html, /src="https:\/\/shaikhshahid\.com\/js\/code-copy\.js"/);
+});
