@@ -1,0 +1,11 @@
+{{- $articleProfiles := slice "X" "GitHub" "Hugging Face" "LinkedIn" -}}
+<nav class="article-follow" aria-label="Follow Shahid's work">
+  <span>Follow my work:</span>
+  <ul>
+    {{- range $profileName := $articleProfiles -}}
+      {{- range where $.Site.Params.Social "name" $profileName -}}
+      <li><a href="{{ .url }}" rel="me">{{ .name }}</a></li>
+      {{- end -}}
+    {{- end -}}
+  </ul>
+</nav>

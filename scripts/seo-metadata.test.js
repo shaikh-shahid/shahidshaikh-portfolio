@@ -45,6 +45,7 @@ test("homepage publishes a canonical URL and Person schema", () => {
   assert.equal(person?.name, "Shahid Shaikh");
   assert.equal(person?.jobTitle, "Principal Software Architect");
   assert.ok(person?.sameAs.includes("https://github.com/shaikh-shahid"));
+  assert.ok(person?.sameAs.includes("https://huggingface.co/rwtc66"));
   assert.equal(meta(html, "og:description"), description(html));
   assert.equal(meta(html, "twitter:card"), "summary_large_image");
   assert.equal(

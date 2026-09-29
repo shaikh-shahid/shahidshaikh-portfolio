@@ -140,9 +140,14 @@ theme = "archie"
   weight = 7
 
 [[params.social]]
-  name = "X"
-  icon = "twitter"
-  url = "https://x.com/shahidontech"
+  name = "Hugging Face"
+  icon = "user"
+  url = "https://huggingface.co/rwtc66"
+
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  url = "https://github.com/shaikh-shahid"
 
 [[params.social]]
   name = "LinkedIn"
@@ -150,11 +155,11 @@ theme = "archie"
   url = "https://www.linkedin.com/in/skshahid/"
 
 [[params.social]]
+  name = "X"
+  icon = "twitter"
+  url = "https://x.com/shahidontech"
+
+[[params.social]]
   name = "YouTube"
   icon = "youtube"
   url = "https://www.youtube.com/@shahidontech"
-
-[[params.social]]
-  name = "GitHub"
-  icon = "github"
-  url = "https://github.com/shaikh-shahid"

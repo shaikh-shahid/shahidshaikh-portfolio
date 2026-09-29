@@ -55,3 +55,39 @@ test("blog articles load the code-copy enhancement", () => {
 
   assert.match(html, /src="https:\/\/shaikhshahid\.com\/js\/code-copy\.js"/);
 });
+
+test("Hugging Face profile appears on the homepage and contact page", () => {
+  const homepage = fs.readFileSync(path.join(destination, "index.html"), "utf8");
+  const contact = fs.readFileSync(path.join(destination, "contact", "index.html"), "utf8");
+  const profileUrl = "https://huggingface.co/rwtc66";
+
+  assert.match(homepage, new RegExp(`href="${profileUrl}"`));
+  assert.match(homepage, />Hugging Face</);
+  assert.match(contact, new RegExp(`href="${profileUrl}"`));
+});
+
+test("articles show profile links below metadata and newsletter after the article", () => {
+  const html = fs.readFileSync(
+    path.join(destination, "blog", "building-cli-for-ai-agents", "index.html"),
+    "utf8"
+  );
+  const metadataPosition = html.indexOf('class="meta"');
+  const followPosition = html.indexOf('class="article-follow"');
+  const bodyPosition = html.indexOf('class="body"');
+  const newsletterPosition = html.indexOf('class="newsletter-signup"');
+
+  assert.ok(metadataPosition >= 0);
+  assert.ok(followPosition > metadataPosition);
+  assert.ok(bodyPosition > followPosition);
+  assert.ok(newsletterPosition > bodyPosition);
+  assert.match(html, /Follow my work:/);
+  assert.match(html, /href="https:\/\/huggingface\.co\/rwtc66"/);
+  assert.match(html, /href="https:\/\/github\.com\/shaikh-shahid"/);
+  assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/skshahid\/"/);
+  assert.match(html, /href="https:\/\/x\.com\/shahidontech"/);
+
+  const followMarkup = html.slice(followPosition, bodyPosition);
+  assert.ok(followMarkup.indexOf(">X</a>") < followMarkup.indexOf(">GitHub</a>"));
+  assert.ok(followMarkup.indexOf(">GitHub</a>") < followMarkup.indexOf(">Hugging Face</a>"));
+  assert.ok(followMarkup.indexOf(">Hugging Face</a>") < followMarkup.indexOf(">LinkedIn</a>"));
+});

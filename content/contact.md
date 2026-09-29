@@ -28,6 +28,7 @@ A short first message is perfect. If you’re writing about a project or collabo
 
 ## Find me elsewhere
 
+- [Hugging Face](https://huggingface.co/rwtc66) for models and AI experiments
 - [GitHub](https://github.com/shaikh-shahid) for code and open-source projects
 - [LinkedIn](https://www.linkedin.com/in/skshahid/) for professional conversations
 - [Writing](/blog/) for technical notes and experiments
