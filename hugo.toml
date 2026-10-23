@@ -44,6 +44,20 @@ theme = "archie"
     ]
 
   [[params.featuredWork]]
+    title = "AM2"
+    tag = "Developer tools"
+    description = "A macOS terminal dashboard for finding, inspecting, and launching local coding agents across projects."
+    url = "/projects/am2/"
+    action = "Read case study"
+    secondaryLabel = "View source"
+    secondaryURL = "https://github.com/shaikh-shahid/am2"
+    details = [
+      "Discovers Codex, Claude, OpenCode, Pi, Gemini CLI, and Cursor Agent",
+      "Searches live agents alongside saved Codex, Claude, and Pi sessions",
+      "Works with or without Herdr"
+    ]
+
+  [[params.featuredWork]]
     title = "MemX"
     tag = "AI tooling"
     description = "A local-first AI memory layer for engineers working across Claude, Cursor, ChatGPT, and other agents."

@@ -24,7 +24,7 @@ I use writing as part of that process. Explaining an idea forces the important q
 
 ## Selected work
 
-I’m building **[Redistill](https://redistill.org/)**, a Redis-compatible key-value system focused on predictable latency and production ergonomics. I’m also exploring practical AI infrastructure through projects such as **[MemX](https://github.com/shaikh-shahid/memx)** and other local-first agent tools.
+I’m building **[Redistill](https://redistill.org/)**, a Redis-compatible key-value system focused on predictable latency and production ergonomics. I’m also exploring practical AI infrastructure through **[MemX](https://github.com/shaikh-shahid/memx)** and developer tools such as **[AM2](/projects/am2/)**, a terminal dashboard for local coding agents.
 
 You can explore the rest of my work through the [Projects](/projects/), [Writing](/blog/), and [Papershelf](/papershelf/) pages.
 

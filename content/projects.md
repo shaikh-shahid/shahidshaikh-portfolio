@@ -20,6 +20,18 @@ An extremely fast Redis-compatible key-value database focused on low-latency pro
 
 [Read the case study](/projects/redistill/) · [Visit the website](https://redistill.org/) · [View the source](https://github.com/redistill-io/redistill)
 
+### [AM2 case study](/projects/am2/)
+
+A macOS terminal dashboard that brings local coding agents into one view. It discovers Codex, Claude, OpenCode, Pi, Gemini CLI, and Cursor Agent processes, with optional Herdr integration for pane status and navigation.
+
+**My role:** I built the Rust terminal application, including agent discovery, project views, session history and search, terminal navigation, and agent launching.
+
+**Why it matters:** Running several agents across terminals makes it easy to lose track of where each one is working. AM2 gives those sessions a shared, local view without requiring Herdr for discovery.
+
+**Area:** Developer tools, AI agents, terminal applications
+
+[Read the case study](/projects/am2/) · [View the source](https://github.com/shaikh-shahid/am2) · [Download for macOS](https://github.com/shaikh-shahid/am2/releases)
+
 ### [MemX case study](/projects/memx/)
 
 A local-first AI memory layer for engineers working across tools like Claude, Cursor, ChatGPT, and other agents.

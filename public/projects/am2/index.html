@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>AM2: A Terminal Dashboard for Coding Agents - Shahid Shaikh</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How Shahid Shaikh built AM2, a macOS terminal dashboard for discovering, inspecting, and launching local coding agents." />
+	<link rel="canonical" href="http://localhost:1313/projects/am2/" />
+	<meta property="og:url" content="http://localhost:1313/projects/am2/" />
+	<meta property="og:site_name" content="Shahid Shaikh" />
+	<meta property="og:title" content="AM2: A Terminal Dashboard for Coding Agents" />
+	<meta property="og:description" content="How Shahid Shaikh built AM2, a macOS terminal dashboard for discovering, inspecting, and launching local coding agents." />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="" />
+	<meta property="og:image" content="http://localhost:1313/images/shahid-speaking.jpeg" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="853" />
+	<meta property="og:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="AM2: A Terminal Dashboard for Coding Agents" />
+	<meta name="twitter:description" content="How Shahid Shaikh built AM2, a macOS terminal dashboard for discovering, inspecting, and launching local coding agents." />
+	<meta name="twitter:image" content="http://localhost:1313/images/shahid-speaking.jpeg" />
+	<meta name="twitter:image:alt" content="Shahid Shaikh speaking at a technology conference" />
+	
+        <link rel="stylesheet" href="/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"  disabled />
+		
+		
+		<link rel="stylesheet" type="text/css" href="/css/custom-home.0cc79da4e2188fe984b0296de22d1e80a2d9c43269fc1423094da7fc4ed9d9a1.css">
+		</head>
+<body>
+        <div class="content"><header>
+  <div class="main">
+    <a href="http://localhost:1313/">Shahid Shaikh</a>
+  </div>
+  <div class="site-navigation">
+    <button class="navigation-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false">Menu</button>
+    <nav id="primary-navigation" aria-label="Primary navigation">
+      
+      <a href="/blog/">Writing</a>
+      
+      <a href="/projects/">Projects</a>
+      
+      <a href="/books/">Books</a>
+      
+      <a href="/papershelf/">Papershelf</a>
+      
+      <a href="/about/">About</a>
+      
+      <a href="/contact/">Contact</a>
+      
+      <a href="/resume.pdf">Resume</a>
+      
+      <button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+      <script src="http://localhost:1313/js/themetoggle.js"></script>
+      
+    </nav>
+  </div>
+  <script src="http://localhost:1313/js/navigation.js" defer></script>
+  <noscript><style data-mobile-navigation-fallback>
+    @media screen and (max-width: 768px) {
+      .navigation-menu-button { display: none !important; }
+      .site-navigation > nav { display: flex !important; flex-wrap: wrap; }
+    }
+  </style></noscript>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">AM2: A Terminal Dashboard for Coding Agents</h1>
+          <div class="meta">Posted on Oct 23, 2026</div>
+        </div>
+        
+        <section class="body">
+          <p>AM2 puts coding agents running across macOS terminals into one dashboard. It discovers local Codex, Claude, OpenCode, Pi, Gemini CLI, and Cursor Agent processes. Herdr is optional: when available, it adds pane status, recent output, and direct pane navigation.</p>
+<p>I built AM2 in Rust with a terminal interface for tracking agents, inspecting their context, and starting a new agent in a project.</p>
+<p><a href="https://github.com/shaikh-shahid/am2">Source</a> · <a href="https://github.com/shaikh-shahid/am2/releases">macOS releases</a></p>
+<p><img src="/images/am2-home.png" alt="AM2 dashboard showing local coding agents"></p>
+<h2 id="why-i-built-it">Why I built it</h2>
+<p>When several coding agents are running in different projects and terminal windows, the hard part is remembering which session is where and what it was doing. AM2 gives me one place to find them and return to the right terminal.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>AM2 scans local processes, so its agent list works without Herdr. It merges Herdr and local observations when both see the same process. The dashboard groups agents by project and agent type, shows their location, and keeps the list stable as their state changes. Where evidence is limited, it shows an unknown state instead of guessing.</p>
+<p>The Projects view groups live agents by Git repository. It shows the branch, changed-file count, latest commit, and agent context using bounded, read-only Git commands. The dashboard can also launch an agent in a new Herdr pane, Ghostty window, Terminal.app window, or iTerm2 window.</p>
+<p>For supported agents, AM2 reads local saved Codex, Claude, and Pi conversations. Search brings live agent metadata and saved events together with SQLite FTS5. Saved history is read from local files; transcript text is not stored in AM2&rsquo;s on-disk database or sent to a network service.</p>
+<h2 id="a-useful-distinction">A useful distinction</h2>
+<p>AM2 separates what it can observe live from what it finds in saved sessions. A recent conversation entry is evidence that a file was written, not proof that an agent is still working. Herdr output and terminal screen previews are limited snapshots, not complete conversation records.</p>
+<h2 id="get-started">Get started</h2>
+<p>AM2 is available for Apple Silicon and Intel Macs through <a href="https://github.com/shaikh-shahid/am2/releases">GitHub Releases</a>. After installing, run <code>am2 doctor</code> to check local process tools and optional integrations, then run <code>am2</code> to open the dashboard. The <a href="https://github.com/shaikh-shahid/am2#readme">README</a> has installation instructions and the full key reference.</p>
+
+        </section>
+        <div class="post-tags">
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://huggingface.co/rwtc66" rel="me" title="Hugging Face"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#user" />
+    </svg></a><a class="border"></a><a class="soc" href="https://github.com/shaikh-shahid" rel="me" title="GitHub"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.linkedin.com/in/skshahid/" rel="me" title="LinkedIn"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#linkedin" />
+    </svg></a><a class="border"></a><a class="soc" href="https://x.com/shahidontech" rel="me" title="X"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#twitter" />
+    </svg></a><a class="border"></a><a class="soc" href="https://www.youtube.com/@shahidontech" rel="me" title="YouTube"><svg class="feather" aria-hidden="true" focusable="false">
+      <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#youtube" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    © Shahid Shaikh, 2026</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>
